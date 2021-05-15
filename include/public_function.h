@@ -1,3 +1,10 @@
+/*
+ * LeetCode算法练习
+ * Description  : 公共函数
+ * Author       : 李阳 l0050626
+ * Created      : 2021-03-15
+ */
+
 #ifndef PUBLIC_FUNCTION_H
 #define PUBLIC_FUNCTION_H
 

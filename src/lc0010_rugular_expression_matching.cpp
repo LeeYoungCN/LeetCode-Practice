@@ -1,7 +1,7 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ * LeetCode算法练习
  * Description  : LeetCode题库10题，https://leetcode-cn.com/problems/regular-expression-matching/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-04-01
  */
 #include "lc0010_rugular_expression_matching.h"

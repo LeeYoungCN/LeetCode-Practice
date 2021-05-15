@@ -1,7 +1,7 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ * LeetCode算法练习
  * Description  : LeetCode题库7题，https://leetcode-cn.com/problems/reverse-integer/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-03-30
  */
 #include <iostream>
