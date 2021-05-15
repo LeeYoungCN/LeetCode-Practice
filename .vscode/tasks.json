@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "type": "shell", // process是把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍
+    "tasks": [
+        {
+            "label": "Compile C++",
+            "command": "g++.exe",
+            "type": "shell",
+            "args": [
+                "-g",
+                "./src/*.cpp",
+                "-I",
+                "./include",
+                "-Wall",
+                "-o",
+                "./bin/DailyPractice"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true,  // 不为true时ctrl shift B就要手动选择了
+            },
+            "problemMatcher": [
+                "$gcc", // 捕捉编译时终端里的报错信息到问题面板中，修改代码后需要重新编译才会再次触发
+            ]
+        },
+        {
+            "label": "Run C++",
+            "command": "${workspaceFolder}/bin/DailyPractice.exe",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Compile & Run C++",
+            "dependsOn": [
+                "Compile C++",
+                "Run C++"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
