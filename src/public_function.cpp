@@ -1,3 +1,9 @@
+/*
+ * LeetCode算法练习
+ * Description  : 公共函数
+ * Author       : 李阳
+ * Created      : 2021-03-15
+ */
 #include <iostream>
 #include <vector>
 #include <string>

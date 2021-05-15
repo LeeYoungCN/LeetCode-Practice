@@ -1,7 +1,7 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ * LeetCode算法练习
  * Description  : LeetCode题库59题，https://leetcode-cn.com/problems/spiral-matrix-ii/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-05-10
  */
 #include <iostream>

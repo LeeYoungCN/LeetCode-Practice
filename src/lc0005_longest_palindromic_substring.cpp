@@ -1,8 +1,8 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ * LeetCode算法练习
  * Description  : LeetCode题库5题，https://leetcode-cn.com/problems/longest-palindromic-substring/
- * Author       : 李阳 l0050626
- * Created      : 2021-03-39
+ * Author       : 李阳
+ * Created      : 2021-03-29
  */
 
 #include "lc0005_longest_palindromic_substring.h"

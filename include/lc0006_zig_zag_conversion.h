@@ -1,7 +1,7 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ * LeetCode算法练习
  * Description  : LeetCode题库6题，https://leetcode-cn.com/problems/zigzag-conversion/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-03-30
  */
 #ifndef LC_0006_ZIG_ZAG_CONVERSION_H
