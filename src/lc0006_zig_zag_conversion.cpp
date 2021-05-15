@@ -1,7 +1,7 @@
 /*
  * LeetCode算法练习
  * Description  : LeetCode题库6题，https://leetcode-cn.com/problems/zigzag-conversion/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-03-30
  */
 #include "lc0006_zig_zag_conversion.h"

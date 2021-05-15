@@ -1,7 +1,7 @@
 /*
  * LeetCode算法练习
  * Description  : LeetCode题库9题，https://leetcode-cn.com/problems/palindrome-number/
- * Author       : 李阳 l0050626
+ * Author       : 李阳
  * Created      : 2021-03-31
  */
 
