@@ -16,7 +16,7 @@
                 "./include",
                 "-Wall",
                 "-o",
-                "./bin/DailyPractice"
+                "./bin/LeetCodePractice"
             ],
             "group": {
                 "kind": "build",
@@ -28,7 +28,7 @@
         },
         {
             "label": "Run C++",
-            "command": "${workspaceFolder}/bin/DailyPractice.exe",
+            "command": "${workspaceFolder}/bin/LeetCodePractice.exe",
             "args": [],
             "group": {
                 "kind": "build",
