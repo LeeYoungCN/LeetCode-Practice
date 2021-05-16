@@ -3,7 +3,8 @@
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [{
+    "configurations": [
+        {
         "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
         "type": "cppdbg", // 配置类型，对于C/C++可认为此处只能是cppdbg，由cpptools提供；不同编程语言不同
         "request": "launch", // 可以为launch（启动）或attach（附加）
@@ -21,6 +22,6 @@
                 "ignoreFailures": false
             }
         ],
-        "preLaunchTask":  ""cmake & make"", // 调试前执行的任务，一般为编译程序。与tasks.json的label相对应
+        "preLaunchTask":  "cmake & make"", // 调试前执行的任务，一般为编译程序。与tasks.json的label相对应
     }]
 }
