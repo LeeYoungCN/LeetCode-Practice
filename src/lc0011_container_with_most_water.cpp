@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
     int maxArea(vector<int>& height) {
         int length = static_cast<int>( height.size());
@@ -21,6 +21,26 @@ public:
             for(int j = i; j < length; j++) {
                 int tmp = (j-i)*min(height[i], height[j]);
                 area = max(tmp, area);
+            }
+        }
+        return area;
+    }
+};
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int area = 0;
+        int x = 0;
+        int y = static_cast<int>(height.size()) - 1;
+
+        while (x < y) {
+            int tmp = min(height[x], height[y]) * (y - x);
+            area = max(area, tmp);
+            if (height[x] < height[y]) {
+                x++;
+            } else {
+                y--;
             }
         }
         return area;
