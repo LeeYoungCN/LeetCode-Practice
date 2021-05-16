@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/LeetCodePractice.dir/main.cpp.o"
-  "CMakeFiles/LeetCodePractice.dir/public_function.cpp.o"
+  "../../bin/LeetCodePractice"
+  "../../bin/LeetCodePractice.pdb"
   "CMakeFiles/LeetCodePractice.dir/lc0005_longest_palindromic_substring.cpp.o"
   "CMakeFiles/LeetCodePractice.dir/lc0006_zig_zag_conversion.cpp.o"
   "CMakeFiles/LeetCodePractice.dir/lc0007_reverse_integer.cpp.o"
@@ -11,8 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LeetCodePractice.dir/lc0054_spiral_order_matrix_i.cpp.o"
   "CMakeFiles/LeetCodePractice.dir/lc0059_spiral_order_matrix_ii.cpp.o"
   "CMakeFiles/LeetCodePractice.dir/lc0094_binary_tree_inorder_traversal.cpp.o"
-  "../../bin/LeetCodePractice.pdb"
-  "../../bin/LeetCodePractice"
+  "CMakeFiles/LeetCodePractice.dir/main.cpp.o"
+  "CMakeFiles/LeetCodePractice.dir/public_function.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
