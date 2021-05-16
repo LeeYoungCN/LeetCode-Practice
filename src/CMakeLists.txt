@@ -1,0 +1,17 @@
+include_directories(../include)
+
+add_executable(LeetCodePractice 
+                main.cpp 
+                public_function.cpp 
+                lc0005_longest_palindromic_substring.cpp 
+                lc0006_zig_zag_conversion.cpp 
+                lc0007_reverse_integer.cpp 
+                lc0008_string_to_integer_atoi.cpp 
+                lc0009_palindrome_number.cpp 
+                lc0010_rugular_expression_matching.cpp 
+                lc0011_container_with_most_water.cpp 
+                lc0054_spiral_order_matrix_i.cpp 
+                lc0059_spiral_order_matrix_ii.cpp 
+                lc0094_binary_tree_inorder_traversal.cpp
+
+                )

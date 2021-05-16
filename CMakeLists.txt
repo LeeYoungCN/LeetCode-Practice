@@ -1,0 +1,5 @@
+project(PRACTICE)
+set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/bin)
+cmake_minimum_required(VERSION 3.4.1)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)

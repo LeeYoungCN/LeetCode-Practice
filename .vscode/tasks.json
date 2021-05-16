@@ -1,13 +1,53 @@
 {
     "version": "2.0.0",
+    "type": "shell",
     "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}/build/"
     },
-    "type": "shell", // process是把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍
     "tasks": [
         {
+            "label": "cmake",
+            "command": "cmake",
+            "args": [".."],
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            }
+        },
+        {
+            "label": "make",
+            "command": "make",
+            "args": [],
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            }
+        },
+        {
+            "label": "cmake & make",
+            "dependsOn":[
+                "cmake",
+                "make",
+            ],
+            "problemMatcher": [
+                "$tsc"
+            ],
+        },
+        {
             "label": "Compile C++",
-            "command": "g++.exe",
+            "command": "g++",
             "type": "shell",
             "args": [
                 "-g",
@@ -16,37 +56,26 @@
                 "./include",
                 "-Wall",
                 "-o",
-                "./bin/LeetCodePractice"
+                "${workspaceFolder}/bin/LeetCodePractice"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true,  // 不为true时ctrl shift B就要手动选择了
             },
             "problemMatcher": [
-                "$gcc", // 捕捉编译时终端里的报错信息到问题面板中，修改代码后需要重新编译才会再次触发
+                "$tsc", // 捕捉编译时终端里的报错信息到问题面板中，修改代码后需要重新编译才会再次触发
             ]
         },
         {
-            "label": "Run C++",
-            "command": "${workspaceFolder}/bin/LeetCodePractice.exe",
-            "args": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true,
+            "label": "Run",
+            "options": {
+                "cwd": "${workspaceFolder}/bin/"
             },
+            "command": "./LeetCodePractice",
+            "args": [],
             "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
-            "label": "Compile & Run C++",
-            "dependsOn": [
-                "Compile C++",
-                "Run C++"
+                "$tsc"
             ],
-            "problemMatcher": [
-                "$gcc"
-            ]
         }
     ]
 }
