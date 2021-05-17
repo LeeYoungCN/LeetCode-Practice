@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/GitHub/LeetCode-Practice/src/lc0054_spiral_order_matrix_i.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/lc0054_spiral_order_matrix_i.cpp.obj"
   "E:/GitHub/LeetCode-Practice/src/lc0059_spiral_order_matrix_ii.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/lc0059_spiral_order_matrix_ii.cpp.obj"
   "E:/GitHub/LeetCode-Practice/src/lc0094_binary_tree_inorder_traversal.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/lc0094_binary_tree_inorder_traversal.cpp.obj"
+  "E:/GitHub/LeetCode-Practice/src/lc0406_queue_reconstruction_by_height.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.obj"
   "E:/GitHub/LeetCode-Practice/src/main.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/main.cpp.obj"
   "E:/GitHub/LeetCode-Practice/src/public_function.cpp" "E:/GitHub/LeetCode-Practice/build/src/CMakeFiles/LeetCodePractice.dir/public_function.cpp.obj"
   )

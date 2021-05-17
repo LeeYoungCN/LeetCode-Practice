@@ -411,6 +411,33 @@ lc0094_binary_tree_inorder_traversal.cpp.s:
 	cd /d E:\GitHub\LeetCode-Practice\build && $(MAKE) -f src\CMakeFiles\LeetCodePractice.dir\build.make src/CMakeFiles/LeetCodePractice.dir/lc0094_binary_tree_inorder_traversal.cpp.s
 .PHONY : lc0094_binary_tree_inorder_traversal.cpp.s
 
+lc0406_queue_reconstruction_by_height.obj: lc0406_queue_reconstruction_by_height.cpp.obj
+
+.PHONY : lc0406_queue_reconstruction_by_height.obj
+
+# target to build an object file
+lc0406_queue_reconstruction_by_height.cpp.obj:
+	cd /d E:\GitHub\LeetCode-Practice\build && $(MAKE) -f src\CMakeFiles\LeetCodePractice.dir\build.make src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.obj
+.PHONY : lc0406_queue_reconstruction_by_height.cpp.obj
+
+lc0406_queue_reconstruction_by_height.i: lc0406_queue_reconstruction_by_height.cpp.i
+
+.PHONY : lc0406_queue_reconstruction_by_height.i
+
+# target to preprocess a source file
+lc0406_queue_reconstruction_by_height.cpp.i:
+	cd /d E:\GitHub\LeetCode-Practice\build && $(MAKE) -f src\CMakeFiles\LeetCodePractice.dir\build.make src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.i
+.PHONY : lc0406_queue_reconstruction_by_height.cpp.i
+
+lc0406_queue_reconstruction_by_height.s: lc0406_queue_reconstruction_by_height.cpp.s
+
+.PHONY : lc0406_queue_reconstruction_by_height.s
+
+# target to generate assembly for a file
+lc0406_queue_reconstruction_by_height.cpp.s:
+	cd /d E:\GitHub\LeetCode-Practice\build && $(MAKE) -f src\CMakeFiles\LeetCodePractice.dir\build.make src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.s
+.PHONY : lc0406_queue_reconstruction_by_height.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -504,6 +531,9 @@ help:
 	@echo ... lc0094_binary_tree_inorder_traversal.obj
 	@echo ... lc0094_binary_tree_inorder_traversal.i
 	@echo ... lc0094_binary_tree_inorder_traversal.s
+	@echo ... lc0406_queue_reconstruction_by_height.obj
+	@echo ... lc0406_queue_reconstruction_by_height.i
+	@echo ... lc0406_queue_reconstruction_by_height.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

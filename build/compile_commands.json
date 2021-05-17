@@ -58,5 +58,10 @@
   "directory": "E:/GitHub/LeetCode-Practice/build/src",
   "command": "\"D:\\Program Files\\mingw64\\bin\\g++.exe\"   @CMakeFiles/LeetCodePractice.dir/includes_CXX.rsp -g   -o CMakeFiles\\LeetCodePractice.dir\\lc0094_binary_tree_inorder_traversal.cpp.obj -c E:\\GitHub\\LeetCode-Practice\\src\\lc0094_binary_tree_inorder_traversal.cpp",
   "file": "E:/GitHub/LeetCode-Practice/src/lc0094_binary_tree_inorder_traversal.cpp"
+},
+{
+  "directory": "E:/GitHub/LeetCode-Practice/build/src",
+  "command": "\"D:\\Program Files\\mingw64\\bin\\g++.exe\"   @CMakeFiles/LeetCodePractice.dir/includes_CXX.rsp -g   -o CMakeFiles\\LeetCodePractice.dir\\lc0406_queue_reconstruction_by_height.cpp.obj -c E:\\GitHub\\LeetCode-Practice\\src\\lc0406_queue_reconstruction_by_height.cpp",
+  "file": "E:/GitHub/LeetCode-Practice/src/lc0406_queue_reconstruction_by_height.cpp"
 }
 ]
