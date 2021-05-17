@@ -8,7 +8,11 @@
         {
             "label": "cmake",
             "command": "cmake",
-            "args": [".."],
+            "args": [
+                "-G",
+                "MinGW  Makefiles",
+                ".."
+            ],
             "problemMatcher": [
                 "$tsc"
             ],
@@ -17,7 +21,7 @@
             },
             "group": {
                 "kind": "build",
-                "isDefault": true,
+                "isDefault": true
             }
         },
         {
@@ -32,18 +36,18 @@
             },
             "group": {
                 "kind": "build",
-                "isDefault": true,
+                "isDefault": true
             }
         },
         {
             "label": "cmake & make",
-            "dependsOn":[
+            "dependsOn": [
                 "cmake",
-                "make",
+                "make"
             ],
             "problemMatcher": [
                 "$tsc"
-            ],
+            ]
         },
         {
             "label": "Compile C++",
@@ -60,10 +64,10 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true,  // 不为true时ctrl shift B就要手动选择了
+                "isDefault": true
             },
             "problemMatcher": [
-                "$tsc", // 捕捉编译时终端里的报错信息到问题面板中，修改代码后需要重新编译才会再次触发
+                "$tsc"
             ]
         },
         {
@@ -75,7 +79,7 @@
             "args": [],
             "problemMatcher": [
                 "$tsc"
-            ],
+            ]
         }
     ]
 }

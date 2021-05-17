@@ -35,7 +35,12 @@ src/CMakeFiles/LeetCodePractice.dir/lc0059_spiral_order_matrix_ii.cpp.obj: ../sr
 src/CMakeFiles/LeetCodePractice.dir/lc0094_binary_tree_inorder_traversal.cpp.obj: ../include/lc0094_binary_tree_inorder_traversal.h
 src/CMakeFiles/LeetCodePractice.dir/lc0094_binary_tree_inorder_traversal.cpp.obj: ../src/lc0094_binary_tree_inorder_traversal.cpp
 
+src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.obj: ../include/lc0406_queue_reconstruction_by_height.h
+src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.obj: ../include/public_function.h
+src/CMakeFiles/LeetCodePractice.dir/lc0406_queue_reconstruction_by_height.cpp.obj: ../src/lc0406_queue_reconstruction_by_height.cpp
+
 src/CMakeFiles/LeetCodePractice.dir/main.cpp.obj: ../include/lc0011_container_with_most_water.h
+src/CMakeFiles/LeetCodePractice.dir/main.cpp.obj: ../include/lc0406_queue_reconstruction_by_height.h
 src/CMakeFiles/LeetCodePractice.dir/main.cpp.obj: ../src/main.cpp
 
 src/CMakeFiles/LeetCodePractice.dir/public_function.cpp.obj: ../include/public_function.h
