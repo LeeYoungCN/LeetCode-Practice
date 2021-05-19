@@ -25,7 +25,7 @@ std::vector<T> ReadVector(const int size)
 }
 
 template<typename T>
-void WriteVector(const std::vector<T> array, const char delemiter = ' ')
+void WriteVector(const std::vector<T> array, const string delemiter = " ")
 {
     auto it = array.begin();
     if (it == array.end()) {
