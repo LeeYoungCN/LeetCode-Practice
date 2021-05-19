@@ -18,31 +18,26 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
-        vector<vector<int>> queue;
-        map<int, vector<vector<int>>> store;
-
-        for (vector<int> p: people) {
-            int sum = accumulate(p.begin(), p.end(), 0);
-            store[sum].push_back(p);
-        }
-
-        for (auto it = store.begin(); it != store.end(); it ++) {
-            vector<vector<int>> v = it->second;
-            sort(v.begin(), v.end());
-            for (vector<int> a: v) {
-                WriteVector<int>(a);
-                cout << endl;
+        const int N = static_cast<int>(people.size());
+        vector<vector<int>> queue(N);
+        
+        sort(people.begin(), people.end(), [](const vector<int> &x, const vector<int> &y) {
+            return (x[0] < y[0]) || (x[0] == y[0] && x[1] > y[1]);
+        });
+        for (vector<int> person: people) {
+            int space = 0;
+            for (int i = 0; i< N; i++) {
+                if (queue[i].empty()) {
+                    if (space == person[1]) {
+                        queue[i] = person;
+                        break;
+                    } else {
+                        space++;
+                    }
+                }
             }
-            cout << endl;
-            
         }
-
-        return people;
-
-    }
-
-    bool compare(vector<int> x, vector<int> y) {
-        return x[0] < y[0];
+        return queue;
     }
 };
 
@@ -58,8 +53,9 @@ void LC0406Test(void)
 
     Solution solu;
     people = solu.reconstructQueue(people);
-    // for (auto v: people) {
-    //     WriteVector<int>(v);
-    //     cout << endl;
-    // }
+    for (auto v: people) {
+        cout << "[";
+        WriteVector<int>(v, ", ");
+        cout << "]" << endl;
+    }
 }
