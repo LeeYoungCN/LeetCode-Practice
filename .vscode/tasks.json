@@ -8,9 +8,10 @@
         {
             "label": "cmake",
             "command": "cmake",
+            "options": {
+                "cwd": "${workspaceFolder}/build/"
+            },
             "args": [
-                "-G",
-                "MinGW  Makefiles",
                 ".."
             ],
             "problemMatcher": [
@@ -26,8 +27,12 @@
         },
         {
             "label": "make",
+            "options": {
+                "cwd": "${workspaceFolder}/build/"
+            },
             "command": "make",
             "args": [],
+            
             "problemMatcher": [
                 "$tsc"
             ],
@@ -55,9 +60,9 @@
             "type": "shell",
             "args": [
                 "-g",
-                "./src/*.cpp",
+                "${workspaceFolder}/src/*.cpp",
                 "-I",
-                "./include",
+                "${workspaceFolder}/include",
                 "-Wall",
                 "-o",
                 "${workspaceFolder}/bin/LeetCodePractice"
@@ -75,13 +80,25 @@
             "options": {
                 "cwd": "${workspaceFolder}/bin/"
             },
-            "dependsOn":[
-                "cmake & make",
+            "dependsOn": [
+                "cmake & make"
             ],
-            "command": "./LeetCodePractice.exe",
+            "command": "./LeetCodePractice",
             "args": [],
             "problemMatcher": [
                 "$tsc"
+            ]
+        },
+        {
+            "label": "clean",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "${workspaceFolder}/build/*",
+                "${workspaceFolder}/bin/*"
+            ],
+            "problemMatcher": [
+                "$gcc"
             ]
         }
     ]
