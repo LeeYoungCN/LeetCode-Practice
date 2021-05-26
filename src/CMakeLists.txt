@@ -13,6 +13,7 @@ add_executable(LeetCodePractice
                 lc0054_spiral_order_matrix_i.cpp 
                 lc0059_spiral_order_matrix_ii.cpp 
                 lc0094_binary_tree_inorder_traversal.cpp 
-                lc0406_queue_reconstruction_by_height.cpp 
+                lc0406_queue_reconstruction_by_height.cpp
+                lc0621_task_scheduler.cpp 
                 lc0994_rotting_oranges.cpp
                 )

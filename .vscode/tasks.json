@@ -75,7 +75,10 @@
             "options": {
                 "cwd": "${workspaceFolder}/bin/"
             },
-            "command": "./LeetCodePractice",
+            "dependsOn":[
+                "cmake & make",
+            ],
+            "command": "./LeetCodePractice.exe",
             "args": [],
             "problemMatcher": [
                 "$tsc"
