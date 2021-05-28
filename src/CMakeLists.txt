@@ -10,6 +10,7 @@ add_executable(LeetCodePractice
                 lc0009_palindrome_number.cpp 
                 lc0010_rugular_expression_matching.cpp 
                 lc0011_container_with_most_water.cpp 
+                lc0045_jump_game_ii.cpp 
                 lc0054_spiral_order_matrix_i.cpp 
                 lc0059_spiral_order_matrix_ii.cpp 
                 lc0094_binary_tree_inorder_traversal.cpp 

@@ -32,7 +32,10 @@ public:
     }
 };
 
-void LC0055Test(void)
+void LC0045Test(void)
 {
-    ;
+    int N = ReadInt();
+    vector<int> nums = ReadVector<int>(N);
+    Solution solu;
+    cout << solu.canJump(nums) << endl;
 }
