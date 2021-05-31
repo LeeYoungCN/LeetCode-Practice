@@ -4,40 +4,62 @@
  * Author       : 李阳
  * Created      : 2021-04-01
  */
+#include <iostream>
+#include <vector>
+
 #include "lc0010_rugular_expression_matching.h"
+#include "public_function.h"
 
-bool RegularExpressionMatch::isMatch(string s, string p) {
+using namespace std;
+namespace LC0010 {
+    class Solution {
+    public:
+        bool isMatch(string s, string p) {
+            const int ROW = s.size();
+            const int COL = p.size();
+            vector<vector<bool>> table(ROW + 1, vector<bool>(COL + 1,false));
 
+            auto isMatch = [&](int x, int y) {
+                if (x == 0) {
+                    return false;
+                }
 
-    return false;
+                if (p[y-1] == '.') {
+                    return true;
+                }
+
+                return s[x-1] == p[y-1];
+            };
+
+            table[0][0] = true; //两边都为空时，判断为true
+            for (int r = 0; r <= ROW; r++) {
+                for (int c = 1; c <= COL; c++) {
+                    if (p[c-1] == '*') {
+                        if (isMatch(r, c-1)) {
+                            table[r][c] = (table[r][c-2] || table[r-1][c]);
+                        } else {
+                            table[r][c] = table[r][c-2];;
+                        }
+                    } else if (isMatch(r, c)) { // 单字符匹配场景
+                        table[r][c] = table[r-1][c-1];
+                    }
+                }
+            }
+            return table[ROW][COL];
+        }
+    };
 }
 
-Node::Node(char key) {
-    this->key = key;
 
-}
+void LC0010Test(void)
+{
+    string s = ReadLine();
+    string p = ReadLine();
+    LC0010::Solution solu;
 
-bool Node::push(char x) {
-
-    if(key == '.' || (key != '.' && key == x)){
-        strIndex.push_back(x);
-        return true;
+    if (solu.isMatch(s, p)) {
+        cout << "true" << endl;
+    } else {
+        cout << "false" << endl;
     }
-    return false;
-}
-
-void Node::setNum(int number) {
-    this->num = number;
-
-    if(key != '.' && num == 0)
-        weight = 0;
-
-    if(key == '.' && num == 0)
-        weight = 1;
-
-    if(key != '.' && num == 1)
-        weight = 2;
-
-    if(key == '.' && num == 1)
-        weight = 3;
 }
