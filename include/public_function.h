@@ -10,31 +10,33 @@
 
 #include <vector>
 #include <string>
-using namespace std;
+
 int ReadInt(void);
-std::string ReadLine();
+std::string ReadLine(void);
+void WriteBoolVector(const std::vector<bool>& array, std::string delemiter = ", ");
 
 template<typename T>
 std::vector<T> ReadVector(const int size)
 {
-    vector<T> ret(size);
+    std::vector<T> ret(size);
     for (int i = 0; i < size; i++) {
-        cin >> ret[i];
+        std::cin >> ret[i];
     }
     return ret;
 }
 
 template<typename T>
-void WriteVector(const std::vector<T> array, const string delemiter = " ")
+void WriteVector(const std::vector<T> array, const std::string delemiter = ", ")
 {
     auto it = array.begin();
     if (it == array.end()) {
         return;
     }
-    cout << *(it++);
+    std::cout << '[' << *(it++);
     while(it != array.end()) {
-        cout << delemiter << *(it++);
+        std::cout << delemiter << *(it++);
     }
+    std::cout << ']' << std::endl;
 }
 
 #endif // PUBLIC_FUNCTION_H

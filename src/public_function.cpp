@@ -25,3 +25,17 @@ string ReadLine()
     getline(cin, line);
     return line;
 }
+
+void WriteBoolVector(const vector<bool>& array, const string delemiter)
+{
+    vector<bool>::const_iterator it = array.begin();
+    if (it == array.end()) {
+        return;
+    }
+
+    cout << '[' << (*(it++)? "true": "false");
+    while (it != array.end()) {
+        cout << delemiter << (*(it++)? "true": "false");
+    }
+    cout << ']' << endl;
+}
