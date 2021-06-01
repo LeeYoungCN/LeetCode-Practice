@@ -18,4 +18,5 @@ add_executable(LeetCodePractice
                 lc0406_queue_reconstruction_by_height.cpp
                 lc0621_task_scheduler.cpp 
                 lc0994_rotting_oranges.cpp
+                lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.cpp
                 )

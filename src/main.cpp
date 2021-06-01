@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "lc0044_wildcard_matching.h"
+#include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
 
 int main(int argc, char *argv[]) {
-    LC0044Test();
+    LC1744Test();
     return 0;
 }
