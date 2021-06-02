@@ -2,86 +2,55 @@
     "version": "2.0.0",
     "type": "shell",
     "options": {
-        "cwd": "${workspaceFolder}/build/"
+        "cwd": "${workspaceFolder}"
     },
     "tasks": [
         {
-            "label": "cmake",
-            "command": "cmake",
+            "label": "Configure this project",
+            "command": "cmake ",
             "args": [
+                "-DCMAKE_TOOLCHAIN_FILE=./cmake/toolchain.cmake",
+                "-S",
+                ".",
+                "-B",
+                "./build",
                 "-G",
-                "MinGW  Makefiles",
-                ".."
+                "MinGW Makefiles"
             ],
+            "detail": "使用cmake命令创建makefile",
             "problemMatcher": [
-                "$tsc"
-            ],
-            "presentation": {
-                "reveal": "always"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "make",
-            "command": "make",
-            "args": [],
-            "problemMatcher": [
-                "$tsc"
-            ],
-            "presentation": {
-                "reveal": "always"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "cmake & make",
-            "dependsOn": [
-                "cmake",
-                "make"
-            ],
-            "problemMatcher": [
-                "$tsc"
+                "$gcc"
             ]
         },
         {
-            "label": "Compile C++",
-            "command": "g++",
-            "type": "shell",
-            "args": [
-                "-g",
-                "./src/*.cpp",
-                "-I",
-                "./include",
-                "-Wall",
-                "-o",
-                "${workspaceFolder}/bin/LeetCodePractice"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "label": "Build",
+            "command": "cmake --build build --target all",
+            "detail": "根据makefile生成可执行文件和库文件",
             "problemMatcher": [
-                "$tsc"
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Configure & Build",
+            "dependsOn":[
+                "Configure this project",
+                "Build",
+            ],
+            "detail": "生成可执行文件和库文件",
+            "problemMatcher": [
+                "$gcc"
             ]
         },
         {
             "label": "Run",
-            "options": {
-                "cwd": "${workspaceFolder}/bin/"
-            },
-            "dependsOn":[
-                "cmake & make",
+            "dependsOn": [
+                "Confige this project",
+                "Build"
             ],
-            "command": "./LeetCodePractice.exe",
-            "args": [],
+            "command": "./bin/LeetCodePractice.exe",
+            "detail": "运行程序",
             "problemMatcher": [
-                "$tsc"
+                "$gcc"
             ]
         }
     ]

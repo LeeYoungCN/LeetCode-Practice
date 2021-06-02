@@ -32,7 +32,7 @@ public:
     }
 };
 
-void LC0045Test(void)
+void LC0055Test(void)
 {
     int N = ReadInt();
     vector<int> nums = ReadVector<int>(N);
