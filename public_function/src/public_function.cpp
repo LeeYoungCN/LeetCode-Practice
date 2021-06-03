@@ -33,9 +33,16 @@ void WriteBoolVector(const vector<bool>& array, const string delemiter)
         return;
     }
 
-    cout << '[' << (*(it++)? "true": "false");
+    cout << '[';
+    PrintBool(*it);
     while (it != array.end()) {
-        cout << delemiter << (*(it++)? "true": "false");
+        cout << delemiter;
+        PrintBool(*it);
     }
     cout << ']' << endl;
+}
+
+void PrintBool(bool input)
+{
+    cout << (input? "true": "false");
 }
