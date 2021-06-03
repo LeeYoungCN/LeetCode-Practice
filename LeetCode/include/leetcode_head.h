@@ -22,6 +22,7 @@
 #include "lc0094_binary_tree_inorder_traversal.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0523_continuous_subarray_sum.h"
+#include "lc0525_contiguous_array.h"
 #include "lc0621_task_scheduler.h"
 #include "lc0994_rotting_oranges.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
