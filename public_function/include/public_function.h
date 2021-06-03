@@ -7,12 +7,13 @@
 
 #ifndef PUBLIC_FUNCTION_H
 #define PUBLIC_FUNCTION_H
-
+#include <iostream>
 #include <vector>
 #include <string>
 
 int ReadInt(void);
 std::string ReadLine(void);
+void PrintBool(bool input);
 void WriteBoolVector(const std::vector<bool>& array, std::string delemiter = ", ");
 
 template<typename T>
