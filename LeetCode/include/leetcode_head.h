@@ -19,6 +19,7 @@
 #include "lc0054_spiral_order_matrix_i.h"
 #include "lc0055_jump_game.h"
 #include "lc0059_spiral_order_matirx_ii.h"
+#include "lc0079_word_search.h"
 #include "lc0094_binary_tree_inorder_traversal.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0523_continuous_subarray_sum.h"
