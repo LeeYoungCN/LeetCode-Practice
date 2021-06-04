@@ -3,6 +3,6 @@
 #include "leetcode_head.h"
 
 int main(int argc, char *argv[]) {
-    LC0525Test();
+    LC0079Test();
     return 0;
 }
