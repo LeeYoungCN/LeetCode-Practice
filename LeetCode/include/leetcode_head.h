@@ -21,6 +21,8 @@
 #include "lc0059_spiral_order_matirx_ii.h"
 #include "lc0079_word_search.h"
 #include "lc0094_binary_tree_inorder_traversal.h"
+#include "lc0130_surrounded_regions.h"
+#include "lc0200_number_of_islands.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
