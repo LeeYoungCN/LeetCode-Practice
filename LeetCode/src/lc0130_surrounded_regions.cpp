@@ -33,6 +33,9 @@
 #include <vector>
 #include <queue>
 
+#include "lc0130_surrounded_regions.h"
+#include "public_function.h"
+
 using namespace std;
 
 class SurroundedRegion {

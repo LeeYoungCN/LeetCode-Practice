@@ -16,6 +16,7 @@
 #include "lc0011_container_with_most_water.h"
 #include "lc0044_wildcard_matching.h"
 #include "lc0045_jump_game_ii.h"
+#include "lc0051_n_queen.h"
 #include "lc0054_spiral_order_matrix_i.h"
 #include "lc0055_jump_game.h"
 #include "lc0059_spiral_order_matirx_ii.h"
