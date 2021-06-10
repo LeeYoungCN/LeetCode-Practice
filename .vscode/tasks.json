@@ -6,6 +6,15 @@
     },
     "tasks": [
         {
+            "label": "Clean",
+            "command": "rm -r build/*",
+            "args": [],
+            "detail": "清除CMake生成文件",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
             "label": "Configure this project",
             "command": "cmake ",
             "args": [
@@ -32,9 +41,9 @@
         },
         {
             "label": "Configure & Build",
-            "dependsOn":[
+            "dependsOn": [
                 "Configure this project",
-                "Build",
+                "Build"
             ],
             "detail": "生成可执行文件和库文件",
             "problemMatcher": [
@@ -52,6 +61,6 @@
             "problemMatcher": [
                 "$gcc"
             ]
-        },
+        }
     ]
 }
