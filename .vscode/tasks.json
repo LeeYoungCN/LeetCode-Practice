@@ -26,6 +26,7 @@
                 "-G",
                 "MinGW Makefiles"
             ],
+            "dependsOn":["Clean"],
             "detail": "使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
