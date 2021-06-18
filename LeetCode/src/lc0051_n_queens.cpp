@@ -36,7 +36,7 @@
 #include <vector>
 #include <set>
 
-#include "lc0051_n_queen.h"
+#include "lc0051_n_queens.h"
 #include "public_function.h"
 
 using namespace std;
