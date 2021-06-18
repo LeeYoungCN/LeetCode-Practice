@@ -17,6 +17,6 @@ aux_source_directory(${LEETCODE_PATH}/src/ LEETCODE_SRCS)
 aux_source_directory(${PUBLIC_FUNC_PATH}/src PUBLIC_FUNC_SRCS)
 
 add_library(public STATIC ${PUBLIC_FUNC_SRCS})
-add_executable(LeetCodePractice main.cpp ${LEETCODE_SRCS})
+add_executable(LeetCodePractice main.cpp ${LEETCODE_SRCS} LeetCode/include/lc0051_n_queens.h)
 
 target_link_libraries(LeetCodePractice ${PROJECT_SOURCE_DIR}/lib/libpublic.a)
