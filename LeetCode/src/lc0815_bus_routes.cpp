@@ -51,26 +51,26 @@ public:
     BusRoutes(vector<vector<int>>& routes, int source, int target)
     {
         lineNum = routes.size();
-        lineMap = vector<unordered_set<int>>(lineNum);
+        lineMap = vector<vector<int>>(lineNum);
 
         unordered_map<int, vector<int>> tmp;
         for (int i = 0; i < lineNum; i++){
             vector<int> line = routes[i];
             for(int station: line) {
-                if (station == source) {
-                    sourceLine.insert(i);
-                }
-                if (station == target) {
-                    targetLine.insert(i);
-                }
-                if (tmp[station].size() > 0) {
-                    for (int l: tmp[station]) {
-                        lineMap[i].insert(l);
-                        lineMap[l].insert(i);
-                    }
+                for (int l: tmp[station]) {
+                    lineMap[i].push_back(l);
+                    lineMap[l].push_back(i);
                 }
                 tmp[station].push_back(i);
             }
+        }
+
+        for (int line:tmp[source]) {
+            sourceLine.insert(line);
+        }
+
+        for (int line: tmp[target]) {
+            targetLine.insert(line);
         }
     }
 
@@ -111,7 +111,7 @@ private:
     unordered_set<int> sourceLine;
     unordered_set<int> targetLine;
     int lineNum;
-    vector<unordered_set<int>> lineMap;
+    vector<vector<int>> lineMap;
 };
 
 class Solution {
