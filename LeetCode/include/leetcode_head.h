@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-06-01。
+ * Created      : 2021-06-01
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -15,6 +15,7 @@
 #include "lc0010_rugular_expression_matching.h"
 #include "lc0011_container_with_most_water.h"
 #include "lc0015_3_sum.h"
+#include "lc0032_longest_valid_parentheses.h"
 #include "lc0044_wildcard_matching.h"
 #include "lc0045_jump_game_ii.h"
 #include "lc0051_n_queens.h"
@@ -32,6 +33,9 @@
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0621_task_scheduler.h"
+#include "lc0752_open_the_lock.h"
+#include "lc0773_sliding_puzzle.h"
+#include "lc0909_snakes_and_ladders.h"
 #include "lc0994_rotting_oranges.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
 
