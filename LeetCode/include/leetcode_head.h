@@ -35,6 +35,7 @@
 #include "lc0621_task_scheduler.h"
 #include "lc0752_open_the_lock.h"
 #include "lc0773_sliding_puzzle.h"
+#include "lc0815_bus_routes.h"
 #include "lc0909_snakes_and_ladders.h"
 #include "lc0994_rotting_oranges.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
