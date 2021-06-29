@@ -26,6 +26,7 @@
 #include "lc0079_word_search.h"
 #include "lc0094_binary_tree_inorder_traversal.h"
 #include "lc0130_surrounded_regions.h"
+#include "lc0149_max_points_on_a_line.h"
 #include "lc0200_number_of_islands.h"
 #include "lc0279_perfect_squares.h"
 #include "lc0406_queue_reconstruction_by_height.h"
