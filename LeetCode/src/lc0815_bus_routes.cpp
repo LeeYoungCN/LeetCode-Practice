@@ -41,87 +41,53 @@
 
 using namespace std;
 
-typedef struct{
-    int line;
-    int step;
-} Node;
-
-class BusRoutes {
-public:
-    BusRoutes(vector<vector<int>>& routes, int source, int target)
-    {
-        lineNum = routes.size();
-        lineMap = vector<unordered_set<int>>(lineNum);
-
-        unordered_map<int, vector<int>> tmp;
-        for (int i = 0; i < lineNum; i++){
-            vector<int> line = routes[i];
-            for(int station: line) {
-                if (station == source) {
-                    sourceLine.insert(i);
-                }
-                if (station == target) {
-                    targetLine.insert(i);
-                }
-                if (tmp[station].size() > 0) {
-                    for (int l: tmp[station]) {
-                        lineMap[i].insert(l);
-                        lineMap[l].insert(i);
-                    }
-                }
-                tmp[station].push_back(i);
-            }
-        }
-    }
-
-    int Run()
-    {
-        deque<Node> bfsQue;
-        vector<bool> visit(lineNum);
-
-        for (int line: sourceLine) {
-            Node node = {line, 1};
-            visit[line] = true;
-            bfsQue.push_back(node);
-        }
-
-        while (!bfsQue.empty()) {
-            Node nodeNow = bfsQue.front();
-            bfsQue.pop_front();
-
-            if (targetLine.count(nodeNow.line)) {
-                return nodeNow.step;
-            }
-            int stepNext = nodeNow.step + 1;
-            for (int lineNext: lineMap[nodeNow.line]) {
-                
-                if (visit[lineNext]) {
-                    continue;
-                }
-                Node nodeNext = {lineNext, stepNext};
-                visit[lineNext] = true;
-                bfsQue.push_back(nodeNext);
-            }
-        }
-
-        return -1;
-
-    }
-private:
-    unordered_set<int> sourceLine;
-    unordered_set<int> targetLine;
-    int lineNum;
-    vector<unordered_set<int>> lineMap;
-};
-
 class Solution {
 public:
     int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
         if (source == target) {
             return 0;
         }
-        BusRoutes br(routes, source, target);
-        return br.Run();
+
+        const int lineNum = routes.size();
+        vector<vector<bool>> graph(lineNum, vector<bool>(lineNum));
+        unordered_map<int, vector<int>> stationMap;
+        vector<int> dis(lineNum, INT_MAX);
+        deque<int> bfsQue;
+
+        for (int i = 0; i < lineNum; i++){
+            for(int station: routes[i]) {
+                for (int l: stationMap[station]) {
+                    graph[i][l] = true;
+                    graph[l][i] = true;
+                }
+                stationMap[station].push_back(i);
+            }
+        }
+
+        for (int station: stationMap[source]) {
+            dis[station] = 1;
+            bfsQue.push_back(station);
+        }
+
+        while (!bfsQue.empty()) {
+            int start = bfsQue.front();
+            bfsQue.pop_front();
+
+            for (int end = 0; end < lineNum; end++) {
+                if (graph[start][end] && dis[end] == INT_MAX) {
+                    dis[end] = dis[start] + 1;
+                    bfsQue.push_back(end);
+                }
+            }
+        }
+
+        int ret = INT_MAX;
+
+        for (int t: stationMap[target]) {
+            ret = min(ret, dis[t]);
+        }
+
+        return (ret == INT_MAX ? -1 : ret);
     }
 };
 
