@@ -29,6 +29,7 @@
 #include "lc0149_max_points_on_a_line.h"
 #include "lc0200_number_of_islands.h"
 #include "lc0279_perfect_squares.h"
+#include "lc0297_serialize_and_deserialize_binary_tree.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
