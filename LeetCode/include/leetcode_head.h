@@ -15,6 +15,7 @@
 #include "lc0010_rugular_expression_matching.h"
 #include "lc0011_container_with_most_water.h"
 #include "lc0015_3_sum.h"
+#include "lc0042_trapping_rain_water.h"
 #include "lc0044_wildcard_matching.h"
 #include "lc0045_jump_game_ii.h"
 #include "lc0051_n_queens.h"
