@@ -36,6 +36,7 @@
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0621_task_scheduler.h"
+#include "lc0726_number_of_atoms.h"
 #include "lc0752_open_the_lock.h"
 #include "lc0773_sliding_puzzle.h"
 #include "lc0815_bus_routes.h"
