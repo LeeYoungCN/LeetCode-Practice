@@ -25,6 +25,7 @@
 #include "lc0059_spiral_order_matirx_ii.h"
 #include "lc0064_minimum_path_sum.h"
 #include "lc0079_word_search.h"
+#include "lc0084_largest_rectangle_in_histogram.h"
 #include "lc0094_binary_tree_inorder_traversal.h"
 #include "lc0130_surrounded_regions.h"
 #include "lc0149_max_points_on_a_line.h"
