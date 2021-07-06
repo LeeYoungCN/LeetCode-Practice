@@ -42,6 +42,7 @@
 #include "lc0815_bus_routes.h"
 #include "lc0909_snakes_and_ladders.h"
 #include "lc0994_rotting_oranges.h"
+#include "lc1418_display_table_of_food_orders_in_a_restaurant.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
 
 #endif // LEETCODE_HEAD_H
