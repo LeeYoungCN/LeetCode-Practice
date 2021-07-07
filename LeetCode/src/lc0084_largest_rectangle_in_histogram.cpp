@@ -1,8 +1,8 @@
 /*
  * LeetCode算法练习
- * Description  : LeetCode题库79题, https://leetcode-cn.com/problems/word-search/
+ * Description  : LeetCode题库84题, https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
  * Author       : 李阳
- * Created      : 2021-06-04
+ * Created      : 2021-07-06
  */
 
 #include <iostream>
