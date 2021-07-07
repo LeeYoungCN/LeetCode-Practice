@@ -21,10 +21,16 @@ public:
         unordered_map<int, int> delMap;
         sort(deliciousness.begin(), deliciousness.end());
         int maxSum = 2 * deliciousness.back();
+        int start = 1;
         for (int del: deliciousness) {
             for (int sum = 1; sum <= maxSum; sum *= 2) {
                 int target = sum - del;
-                cnt += delMap[target]%MOD;
+                if (target < 0) {
+                    continue;
+                } else if (target > del){
+                    break;
+                }
+                cnt = (cnt + delMap[target])%MOD;
             }
             delMap[del]++;
         }
