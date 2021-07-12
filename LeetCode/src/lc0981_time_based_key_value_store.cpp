@@ -14,19 +14,6 @@
 
 using namespace std;
 
-class CompareFunc {
-public:
-    CompareFunc(int timestamp):timestamp(timestamp){}
-
-    bool operator() (pair<int, string> p)
-    {
-        return p.first >= timestamp;
-    }
-
-private:
-    int timestamp;
-};
-
 class TimeMap {
 public:
     /** Initialize your data structure here. */
@@ -37,23 +24,13 @@ public:
     }
     
     string get(string key, int timestamp) {
-        string ret;
-        vector<pair<int, string>> tmp = container[key];
-        sort(tmp.begin(), tmp.end(), [](pair<int, string> x, pair<int, string> y) {
-            return x.first < y.first;
-        });
-        if (tmp.begin()->first > timestamp) {
-            return "";
+        vector<pair<int, string>>& tmp = container[key];
+        pair<int, string> bound = {timestamp, string({127})};
+        auto it = upper_bound(tmp.begin(), tmp.end(), bound);
+        if (it != tmp.begin()) {
+            return (it-1)->second;
         }
-
-        map<int, string>::iterator it = find_if(tmp.begin(), tmp.end(), CompareFunc(timestamp));
-        if (it == tmp.end()) {
-            it = --(tmp.end());
-        } else if (it->first > timestamp){
-            it--;
-        }
-        ret = it->second;
-        return ret;
+        return "";
     }
 private:
     unordered_map<string, vector<pair<int, string>>> container;
