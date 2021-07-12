@@ -31,6 +31,8 @@
 #include "lc0149_max_points_on_a_line.h"
 #include "lc0168_excel_sheet_column_title.h"
 #include "lc0200_number_of_islands.h"
+#include "lc0274_h_index.h"
+#include "lc0275_h_index_ii.h"
 #include "lc0279_perfect_squares.h"
 #include "lc0297_serialize_and_deserialize_binary_tree.h"
 #include "lc0406_queue_reconstruction_by_height.h"
