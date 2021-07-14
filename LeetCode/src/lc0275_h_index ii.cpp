@@ -38,28 +38,28 @@ namespace m1 {
     };
 }
 
-
-class Solution {
-public:
-    int hIndex(vector<int> &citations) {
-        const int N = citations.size();
-        int start = 0;
-        int end = N - 1;
-        int ret = 0;
-        while (start < end) {
-            int half = (start + end) / 2;
-            ret = N - half;
-            if (citations[half] >= ret) {
-                end = half;
-            } else {
-                start = half + 1;
+namespace m2 {
+    class Solution {
+    public:
+        int hIndex(vector<int> &citations) {
+            const int N = citations.size();
+            int start = 0;
+            int end = N - 1;
+            int ret = 0;
+            while (start < end) {
+                int half = (start + end) / 2;
+                ret = N - half;
+                if (citations[half] >= ret) {
+                    end = half;
+                } else {
+                    start = half + 1;
+                }
             }
+            ret = N - start;
+            return citations[start] >= ret ? ret : 0;
         }
-        ret = N - start;
-        return citations[start] >= ret ? ret : 0;
-    }
-};
-
+    };
+}
 
 
 void LC0275Test()

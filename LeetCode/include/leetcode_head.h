@@ -52,5 +52,6 @@
 #include "lc1418_display_table_of_food_orders_in_a_restaurant.h"
 #include "lc1711_count_good_meals.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
+#include "lc1818_minimum_absolute_sum_difference.h"
 
 #endif // LEETCODE_HEAD_H
