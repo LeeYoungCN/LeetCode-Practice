@@ -16,12 +16,11 @@ using namespace std;
 class Solution {
 public:
     int countPairs(vector<int>& deliciousness) {
-        const int MOD = 1'000'000'007;
+        const int MOD = 1000000007;
         int cnt = 0;
         unordered_map<int, int> delMap;
         sort(deliciousness.begin(), deliciousness.end());
         int maxSum = 2 * deliciousness.back();
-        int start = 1;
         for (int del: deliciousness) {
             for (int sum = 1; sum <= maxSum; sum *= 2) {
                 int target = sum - del;

@@ -24,7 +24,7 @@ public:
         const int N = nums1.size();
         vector<int> nums1Copy(nums1);
         int maxDelta = 0;
-        const int MOD = 1'000'000'007;
+        const int MOD = 1000000007;
         sort(nums1Copy.begin(), nums1Copy.end());
         for (int i = 0; i < N; i++) {
             int delta = abs(nums1[i] - nums2[i]);

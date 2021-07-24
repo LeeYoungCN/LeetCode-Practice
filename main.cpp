@@ -5,6 +5,6 @@
 #include "leetcode_head.h"
 using namespace std;
 int main(int argc, char *argv[]) {
-    LC1818Test();
+    cout << "Hello" << endl;
     return 0;
 }

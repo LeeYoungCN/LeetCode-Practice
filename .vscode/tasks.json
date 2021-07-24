@@ -7,7 +7,7 @@
     "tasks": [
         {
             "label": "Clean",
-            "command": "rm -r build/*",
+            "command": "rm -rf ./build/",
             "args": [],
             "detail": "清除CMake生成文件",
             "problemMatcher": [
@@ -15,10 +15,10 @@
             ]
         },
         {
-            "label": "Configure this project",
+            "label": "cmake_windows",
             "command": "cmake ",
             "args": [
-                "-DCMAKE_TOOLCHAIN_FILE=./cmake/toolchain.cmake",
+                "-DCMAKE_TOOLCHAIN_FILE=./cmake/win_toolchain.cmake",
                 "-S",
                 ".",
                 "-B",
@@ -27,7 +27,23 @@
                 "MinGW Makefiles"
             ],
             "dependsOn":["Clean"],
-            "detail": "使用cmake命令创建makefile",
+            "detail": "Windows使用cmake命令创建makefile",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "cmake_Mac",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_TOOLCHAIN_FILE=./cmake/mac_toolchain.cmake",
+                "-S",
+                ".",
+                "-B",
+                "./build",
+            ],
+            "dependsOn":["Clean"],
+            "detail": "Windows使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
             ]
@@ -57,7 +73,7 @@
                 "Confige this project",
                 "Build"
             ],
-            "command": "./bin/LeetCodePractice.exe",
+            "command": "./bin/LeetCodePractice*",
             "detail": "运行程序",
             "problemMatcher": [
                 "$gcc"
