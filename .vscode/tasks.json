@@ -26,7 +26,9 @@
                 "-G",
                 "MinGW Makefiles"
             ],
-            "dependsOn":["Clean"],
+            "dependsOn": [
+                "Clean"
+            ],
             "detail": "Windows使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
@@ -40,10 +42,12 @@
                 "-S",
                 ".",
                 "-B",
-                "./build",
+                "./build"
             ],
-            "dependsOn":["Clean"],
-            "detail": "Windows使用cmake命令创建makefile",
+            "dependsOn": [
+                "Clean"
+            ],
+            "detail": "Mac使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
             ]
@@ -77,7 +81,11 @@
             "detail": "运行程序",
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

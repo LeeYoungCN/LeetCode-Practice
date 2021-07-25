@@ -4,9 +4,6 @@ set(MINGW_PATH "D:/Program Files/mingw64")
 set(CMAKE_C_COMPLIER ${MINGW_PATH}/bin/gcc.exe)
 set(CMAKE_CXX_COMPLIER ${MINGW_PATH}/bin/g++.exe)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g")
-
 set(CMAKE_FIND_ROOT_PATH ${MINGW_PATH}/x86_64-w64-mingw32)
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
