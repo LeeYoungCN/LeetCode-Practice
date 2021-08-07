@@ -19,6 +19,8 @@
 #include "public_function.h"
 #include "lc0138_copy_list_with_random_pointer.h"
 
+using namespace std;
+
 class Node {
 public:
     int val;
