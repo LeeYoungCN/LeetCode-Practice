@@ -3,4 +3,4 @@ build/*
 bin/*
 lib/*
 cmake-build-debug/*
-./vscode/c_cpp_properties.json
+.vscode/c_cpp_properties.json
