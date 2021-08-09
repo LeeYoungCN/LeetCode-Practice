@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ./cmake_clean.sh
 
 cd ..

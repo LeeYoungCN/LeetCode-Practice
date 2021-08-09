@@ -30,6 +30,7 @@
  * 
  */
 #include <iostream>
+#include <climits>
 #include <vector>
 #include <set>
 #include <map>
