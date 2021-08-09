@@ -7,8 +7,10 @@
     "tasks": [
         {
             "label": "Clean",
-            "command": "rm -rf ./build/",
-            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_clean.sh",
             "detail": "清除CMake生成文件",
             "problemMatcher": [
                 "$gcc"
@@ -16,19 +18,10 @@
         },
         {
             "label": "cmake_windows",
-            "command": "cmake ",
-            "args": [
-                "-DCMAKE_TOOLCHAIN_FILE=./cmake/win_toolchain.cmake",
-                "-S",
-                ".",
-                "-B",
-                "./build",
-                "-G",
-                "MinGW Makefiles"
-            ],
-            "dependsOn": [
-                "Clean"
-            ],
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_config.sh Windows",
             "detail": "Windows使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
@@ -36,17 +29,10 @@
         },
         {
             "label": "cmake_Mac",
-            "command": "cmake",
-            "args": [
-                "-DCMAKE_TOOLCHAIN_FILE=./cmake/mac_toolchain.cmake",
-                "-S",
-                ".",
-                "-B",
-                "./build"
-            ],
-            "dependsOn": [
-                "Clean"
-            ],
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_config.sh",
             "detail": "Mac使用cmake命令创建makefile",
             "problemMatcher": [
                 "$gcc"
@@ -61,20 +47,8 @@
             ]
         },
         {
-            "label": "Configure & Build",
-            "dependsOn": [
-                "Configure this project",
-                "Build"
-            ],
-            "detail": "生成可执行文件和库文件",
-            "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
             "label": "Run",
             "dependsOn": [
-                "Confige this project",
                 "Build"
             ],
             "command": "./bin/LeetCodePractice*",
@@ -82,10 +56,6 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
         }
     ]
 }
