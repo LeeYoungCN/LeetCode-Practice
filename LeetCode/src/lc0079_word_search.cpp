@@ -45,8 +45,8 @@ public:
         this->visit = vector<vector<bool>>(ROW_NUM, vector<bool>(COL_NUM, true)); // true 可以被访问 false 不可以被访问
 
 
-        for (size_t i = 0; i < ROW_NUM; i++) {
-            for (size_t j = 0; j < COL_NUM; j++) {
+        for (int i = 0; i < ROW_NUM; i++) {
+            for (int j = 0; j < COL_NUM; j++) {
                 if(dfs(i,j, 0)) {
                     return true;
                 }
@@ -90,9 +90,9 @@ public:
 private:
     vector<vector<char>> board;
     string word;
-    size_t ROW_NUM;
-    size_t COL_NUM;
-    size_t LENGTH;
+    int ROW_NUM;
+    int COL_NUM;
+    int LENGTH;
     vector<vector<bool>> visit;
 };
 

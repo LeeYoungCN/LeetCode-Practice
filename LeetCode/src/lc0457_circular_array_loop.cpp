@@ -27,7 +27,7 @@ namespace {
 class Solution {
 public:
     bool circularArrayLoop(vector<int>& nums) {
-        const size_t N = nums.size();
+        const int N = nums.size();
         vector<int> visit(N);
 
         for (int i = 0; i < N; i++) {
@@ -45,7 +45,7 @@ private:
         bool dir = (nums[startPos] > 0); // false: 反向， true:正向
         int next = startPos;
         while (true) {
-            if (nums[next] > 0 != dir) {
+            if ((nums[next] > 0) != dir) {
                 return false;
             }
 

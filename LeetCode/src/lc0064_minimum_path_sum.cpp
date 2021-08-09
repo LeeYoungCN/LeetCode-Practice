@@ -56,9 +56,9 @@ public:
         return dp[0][0];
     }
 private:
+    vector<vector<int>>& grid;
     const int ROW_NUM;
     const int COL_NUM;
-    vector<vector<int>>& grid;
     vector<vector<int>> dp;
 };
 

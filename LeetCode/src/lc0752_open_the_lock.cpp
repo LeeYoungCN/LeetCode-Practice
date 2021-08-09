@@ -112,10 +112,10 @@ private:
         return key;
     }
 
+    const string target;
     const int length;
     unordered_map<string, int> visit;
     unordered_set<string> deadends;
-    const string target;
     const vector<int> dir = {1, -1};
 
 };

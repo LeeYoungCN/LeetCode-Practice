@@ -140,10 +140,9 @@ private:
     }
 
 private:
-    const size_t ROW_NUM;
-    const size_t COL_NUM;
-
     vector<vector<char>> &board;
+    const int ROW_NUM;
+    const int COL_NUM;
     vector<vector<bool>> visit;
 };
 

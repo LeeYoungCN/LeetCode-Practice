@@ -81,9 +81,9 @@ private:
     }
 
 private:
+    vector<vector<char>> grid;
     const int ROW_NUM;
     const int COL_NUM;
-    vector<vector<char>> grid;
 };
 
 class Solution {

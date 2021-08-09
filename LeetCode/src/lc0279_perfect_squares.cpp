@@ -34,7 +34,6 @@ namespace{
     class Solution {
     public:
         int numSquares(int n) {
-            int sq = sqrt(n);
             vector<int> dp(n+1);
 
             for (int i = 1; i <= n; i++) {
