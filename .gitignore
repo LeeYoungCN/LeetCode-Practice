@@ -4,3 +4,6 @@ bin/*
 lib/*
 cmake-build-debug/*
 .vscode/c_cpp_properties.json
+.vscode/launch.json
+script/public_config.sh
+cmake/*

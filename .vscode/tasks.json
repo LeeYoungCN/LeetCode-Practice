@@ -17,23 +17,12 @@
             ]
         },
         {
-            "label": "cmake_windows",
+            "label": "Config & Build",
             "options": {
                 "cwd": "${workspaceFolder}/script/"
             },
-            "command": "./cmake_config.sh Windows",
-            "detail": "Windows使用cmake命令创建makefile",
-            "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
-            "label": "cmake_Mac",
-            "options": {
-                "cwd": "${workspaceFolder}/script/"
-            },
-            "command": "./cmake_config.sh",
-            "detail": "Mac使用cmake命令创建makefile",
+            "command": "./cmake_build.sh",
+            "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [
                 "$gcc"
             ]
