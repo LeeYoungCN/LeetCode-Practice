@@ -41,6 +41,7 @@
                 "Build"
             ],
             "command": "./bin/LeetCodePractice*",
+            "args": [],
             "detail": "运行程序",
             "problemMatcher": [
                 "$gcc"

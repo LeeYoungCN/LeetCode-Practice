@@ -10,4 +10,5 @@ if [ "${system}" = "Windows" ]; then
 fi
 echo "${cmake_command}"
 ${cmake_command}
-cmake --build build --target all
+cmake --build build --target public
+cmake --build build --target LeetCodePractice
