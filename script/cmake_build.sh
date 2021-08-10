@@ -12,3 +12,4 @@ echo "${cmake_command}"
 ${cmake_command}
 cmake --build build --target public
 cmake --build build --target LeetCodePractice
+cmake --build build --target create_CPP

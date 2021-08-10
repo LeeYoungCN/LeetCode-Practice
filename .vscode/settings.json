@@ -53,6 +53,13 @@
         "bitset": "cpp",
         "__functional_base": "cpp",
         "__locale": "cpp",
-        "__node_handle": "cpp"
+        "__node_handle": "cpp",
+        "bit": "cpp",
+        "cerrno": "cpp",
+        "climits": "cpp",
+        "random": "cpp",
+        "ios": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }

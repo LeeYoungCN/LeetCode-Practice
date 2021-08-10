@@ -2,12 +2,13 @@
 #include <algorithm>
 #include <vector>
 
-#include "leetcode_head.h"
+#include "src_file.h"
 
 using namespace std;
 
 int main(int argc, char* argv[]) 
 {
-    cout << "HelloWorld" << endl;
+    char b[] = "123.cpp";
+    SrcFile a(b);
     return 0;
 }
