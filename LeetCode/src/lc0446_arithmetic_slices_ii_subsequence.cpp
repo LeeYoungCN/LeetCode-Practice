@@ -31,8 +31,9 @@ public:
         vector<unordered_map<DELTA, COUNT>> fn(N);
         for (int i = 0; i < N - 1; i++) {
             for (int j = i + 1; j < N; j++) {
-                DELTA delta = static_cast<DELTA>(nums[i]) - nums[j];
-                COUNT cnt = fn[i][delta];
+                DELTA delta = static_cast<DELTA>(nums[j]) - nums[i];
+                auto it = fn[i].find(delta);
+                COUNT cnt = (it == fn[i].end() ? 0 : it->second);
                 ret += cnt;
                 fn[j][delta] += cnt + 1;
             }
