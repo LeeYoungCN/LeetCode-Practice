@@ -3,7 +3,6 @@ project(LeetCodePractice)
 
 set(TARGET_NAME LeetCodePractice)
 set(LIB_NAME public)
-set(TOOL_NAME create_CPP)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_CXX_STANDARD 11)
@@ -29,5 +28,3 @@ add_subdirectory(${LEETCODE_PATH})
 
 target_link_libraries(${TARGET_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/lib/lib${LIB_NAME}.a)
 
-add_executable(${TOOL_NAME})
-add_subdirectory(${TOOL_PATH})

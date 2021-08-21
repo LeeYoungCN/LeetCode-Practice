@@ -39,6 +39,7 @@
 #include "lc0297_serialize_and_deserialize_binary_tree.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0413_arithmetic_slices.h"
+#include "lc0443_string_compression.h"
 #include "lc0446_arithmetic_slices_ii_subsequence.h"
 #include "lc0451_sort_characters_by_frequency.h"
 #include "lc0457_circular_array_loop.h"

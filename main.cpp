@@ -5,6 +5,6 @@ using namespace std;
 
 int main(int argc, char* argv[]) 
 {
-    LC0446Test();
+    LC0443Test();
     return 0;
 }
