@@ -43,6 +43,7 @@
 #include "lc0446_arithmetic_slices_ii_subsequence.h"
 #include "lc0451_sort_characters_by_frequency.h"
 #include "lc0457_circular_array_loop.h"
+#include "lc0516_longest_palindromic_subsequence.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0621_task_scheduler.h"
