@@ -31,11 +31,29 @@ void WriteVector(const std::vector<T> array, const std::string delemiter = ", ")
 {
     auto it = array.begin();
     if (it == array.end()) {
+        std::cout << "[]";
         return;
     }
     std::cout << '[' << *(it++);
     while(it != array.end()) {
         std::cout << delemiter << *(it++);
+    }
+    std::cout << ']';
+}
+
+template<typename T>
+void WriteMatrix(const std::vector<std::vector<T>> matrix, const std::string delemiter = ", ")
+{
+    auto array = matrix.begin();
+    if (array == matrix.end()) {
+        std::cout << "[[]]";
+        return;
+    }
+    std::cout << '[';
+    WriteVector<T>(*(array++), delemiter);
+    while(array != matrix.end()) {
+        std::cout << delemiter << std::endl << " ";
+        WriteVector<T>(*(array++), delemiter);
     }
     std::cout << ']' << std::endl;
 }

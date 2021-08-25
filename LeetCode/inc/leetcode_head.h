@@ -52,6 +52,7 @@
 #include "lc0726_number_of_atoms.h"
 #include "lc0752_open_the_lock.h"
 #include "lc0773_sliding_puzzle.h"
+#include "lc0797_all_paths_from_source_to_target.h"
 #include "lc0815_bus_routes.h"
 #include "lc0909_snakes_and_ladders.h"
 #include "lc0930_binary_subarrays_with_sum.h"
