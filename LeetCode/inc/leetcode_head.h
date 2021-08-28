@@ -54,6 +54,7 @@
 #include "lc0773_sliding_puzzle.h"
 #include "lc0797_all_paths_from_source_to_target.h"
 #include "lc0815_bus_routes.h"
+#include "lc0881_boats_to_save_people.h"
 #include "lc0909_snakes_and_ladders.h"
 #include "lc0930_binary_subarrays_with_sum.h"
 #include "lc0981_time_based_key_value_store.h"
