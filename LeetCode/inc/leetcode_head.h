@@ -36,6 +36,7 @@
 #include "lc0274_h_index.h"
 #include "lc0275_h_index_ii.h"
 #include "lc0279_perfect_squares.h"
+#include "lc0295_find_median_from_data_stream.h"
 #include "lc0297_serialize_and_deserialize_binary_tree.h"
 #include "lc0368_largest_divisible_subset.h"
 #include "lc0406_queue_reconstruction_by_height.h"
