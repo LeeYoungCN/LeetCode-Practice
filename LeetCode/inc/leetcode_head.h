@@ -60,6 +60,7 @@
 #include "lc0930_binary_subarrays_with_sum.h"
 #include "lc0981_time_based_key_value_store.h"
 #include "lc0994_rotting_oranges.h"
+#include "lc1109_corporate_light_bookings.h"
 #include "lc1418_display_table_of_food_orders_in_a_restaurant.h"
 #include "lc1711_count_good_meals.h"
 #include "lc1743_restore_the_array_from_adjacent_pairs.h"

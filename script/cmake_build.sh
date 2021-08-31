@@ -6,9 +6,10 @@ cd ..
 cmake_command='cmake -S . -B ./build -DCMAKE_TOOLCHAIN_FILE=./cmake/toolchain.cmake'
 
 if [ "${system}" = "Windows" ]; then
-     cmake_command=`${cmake_command} -G "MinGW Makefiles"`
+     ${cmake_command} -G "MinGW Makefiles"
+else
+     ${cmake_command}
 fi
-echo "${cmake_command}"
-${cmake_command}
+
 cmake --build build --target public
 cmake --build build --target LeetCodePractice
