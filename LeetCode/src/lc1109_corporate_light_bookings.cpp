@@ -44,7 +44,7 @@ public:
 void LC1109Test()
 {
     vector<vector<int>> bookings = {{1,2,10},{2,3,20},{2,5,25}};
-    int n = 5
+    int n = 5;
     Solution solu;
     auto result = solu.corpFlightBookings(bookings, n);
     WriteVector<int>(result);
