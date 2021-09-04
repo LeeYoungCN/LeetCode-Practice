@@ -52,6 +52,7 @@
 #include "lc0621_task_scheduler.h"
 #include "lc0645_set_mismatch.h"
 #include "lc0726_number_of_atoms.h"
+#include "lc0740_delete_and_earn.h"
 #include "lc0752_open_the_lock.h"
 #include "lc0773_sliding_puzzle.h"
 #include "lc0797_all_paths_from_source_to_target.h"
