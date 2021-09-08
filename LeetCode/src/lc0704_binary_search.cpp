@@ -19,6 +19,8 @@
 #include "public_function.h"
 #include "lc0704_binary_search.h"
 
+using namespace std;
+
 namespace iter {
 class Solution {
 public:
