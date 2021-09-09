@@ -27,7 +27,7 @@ public:
         int nowCapital = w;
         const size_t N = capital.size();
         vector<pair<int, int>> menu(N);
-        int curr = 0;
+        size_t curr = 0;
         for (size_t i = 0; i < N; i++) {
             menu[i].first = capital[i];
             menu[i].second = profits[i];
@@ -65,4 +65,3 @@ void LC0502Test()
     Solution solu;
     cout << solu.findMaximizedCapital(k,w, profits, capital);
 }
-
