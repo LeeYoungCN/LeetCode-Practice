@@ -72,5 +72,6 @@
 #include "lc1743_restore_the_array_from_adjacent_pairs.h"
 #include "lc1744_can_you_eat_your_favorite_candy_on_your_favorite_day.h"
 #include "lc1818_minimum_absolute_sum_difference.h"
+#include "lc1894_find_the_student_that_will_replace_the_chalk.h"
 
 #endif // LEETCODE_HEAD_H
