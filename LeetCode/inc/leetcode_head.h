@@ -52,6 +52,7 @@
 #include "lc0516_longest_palindromic_subsequence.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
+#include "lc0600_non_negative_integers_without_consecutive_ones.h"
 #include "lc0621_task_scheduler.h"
 #include "lc0645_set_mismatch.h"
 #include "lc0726_number_of_atoms.h"
