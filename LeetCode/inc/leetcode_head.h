@@ -33,6 +33,7 @@
 #include "lc0130_surrounded_regions.h"
 #include "lc0138_copy_list_with_random_pointer.h"
 #include "lc0149_max_points_on_a_line.h"
+#include "lc0162_find_peak_element.h"
 #include "lc0165_compare_version_numbers.h"
 #include "lc0168_excel_sheet_column_title.h"
 #include "lc0198_house_robber.h"

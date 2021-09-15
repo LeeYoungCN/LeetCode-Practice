@@ -31,6 +31,7 @@ public:
         string ret = "";
         for (int tmpLen = 1; tmpLen <= N; tmpLen++) {
             for (int start = 0; start + tmpLen -1 < N; start++) {
+                int end = start + tmpLen -1;
                 dp[start][end] = (s[start] == s[end]);
                 if (tmpLen > 2) {
                     dp[start][end] = dp[start][end] && dp[start+1][end-1];
