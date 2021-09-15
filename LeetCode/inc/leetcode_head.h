@@ -8,6 +8,8 @@
 #ifndef LEETCODE_HEAD_H
 #define LEETCODE_HEAD_H
 
+#include "lc0004_median_of_two_sorted_arrays.h"
+#include "lc0005_longest_palindromic_substring.h"
 #include "lc0006_zig_zag_conversion.h"
 #include "lc0007_reverse_integer.h"
 #include "lc0008_string_to_integer_atoi.h"
