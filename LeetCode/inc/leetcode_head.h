@@ -40,6 +40,7 @@
 #include "lc0198_house_robber.h"
 #include "lc0200_number_of_islands.h"
 #include "lc0208_implement_trie_prefix_tree.h"
+#include "lc0212_word_search_ii.h"
 #include "lc0233_number_of_digit_one.h"
 #include "lc0240_search_a_2d_matrix_ii.h"
 #include "lc0274_h_index.h"
