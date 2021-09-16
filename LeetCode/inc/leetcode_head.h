@@ -30,6 +30,7 @@
 #include "lc0068_text_justification.h"
 #include "lc0079_word_search.h"
 #include "lc0084_largest_rectangle_in_histogram.h"
+#include "lc0093_restore_ip_addresses.h"
 #include "lc0094_binary_tree_inorder_traversal.h"
 #include "lc0130_surrounded_regions.h"
 #include "lc0138_copy_list_with_random_pointer.h"
