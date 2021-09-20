@@ -1,8 +1,8 @@
 /*
  * LeetCode算法练习
- * Description  : LeetCode题库4题, https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
+ * Description  : LeetCode题库650题, https://leetcode-cn.com/problems/restore-ip-addresses/
  * Author       : 李阳
- * Created      : 2021-09-14
+ * Created      : 2021-09-20
  */
 #include <iostream>
 #include <algorithm>
@@ -20,45 +20,71 @@
 #include "lc0093_restore_ip_addresses.h"
 
 using namespace std;
-
-#define MIN_POS 0
-#define MAX_POS 3
+#define MAX_POS 4
+#define MIN_POS 1
 #define MAX_LEN 3
 #define MIN_LEN 1
 
 class Solution {
 public:
     vector<string> restoreIpAddresses(string s) {
-        vector<int> que;
-        vector<vector<int>> legalList;
-        vector<int> state(MAX_POS + 1);
-        dfs(s.size(), MIN_POS, state, legalList);
-        return {""};
+        vector<string> ret;
+        vector<string> legalIpList;
+        Dfs(MIN_POS, s.size(), legalIpList, ret, s);
+        return ret;
     }
 private:
-    void dfs(int total, int pos, vector<int>& state, vector<vector<int>>& legalList)
+    void Dfs(int pos, int total, vector<string>& legalIpList, vector<string>& ret, string& s)
     {
-        if (total < (MAX_POS - pos + 1) || total > (MAX_POS - pos + 1)*3) {
+        if (total < (MAX_POS - pos + 1) * MIN_LEN || total > (MAX_POS - pos + 1) * MAX_LEN) {
             return;
         }
 
         if (pos == MAX_POS) {
-            state[pos] = total;
-            legalList.emplace_back(state);
-            WriteVector<int>(state);
+            string tmpStr = GetString(total, total, s);
+            if (tmpStr.size() == 0) {
+                return;
+            }
+            string IP;
+            for (auto legal :legalIpList ) {
+                IP += legal + '.';
+            }
+            IP += tmpStr;
+            ret.emplace_back(IP);
             return;
         }
 
-        for (int i = MIN_LEN; i <= MAX_LEN; i++) {
-            state[pos] = i;
-            dfs(total - i, pos + 1, state, legalList);
+        for (int l = MIN_LEN; l <= MAX_LEN && l <= total; l++) {
+            string tmpStr = GetString(total, l, s);
+            if (tmpStr.size() == 0) {
+                continue;
+            }
+            legalIpList.emplace_back(tmpStr);
+            Dfs(pos + 1, total - l, legalIpList, ret, s);
+            legalIpList.pop_back();
         }
+    }
+
+    string GetString(int total, int l, string& s)
+    {
+        int start = s.size() - total;
+        string ret;
+        if (l > 1 && s[start] == '0') {
+            return ret;
+        }
+        for (int i = 0; i < l; i++) {
+            ret += s[start + i];
+        }
+        if (l == 3 && ret > "255") {
+            ret = "";
+        }
+        return ret;
     }
 };
 
 void LC0093Test()
 {
+    string s = "25525511135";
     Solution solu;
-    string s = "2552551113";
-    solu.restoreIpAddresses(s);
+    WriteVector<string>(solu.restoreIpAddresses(s));
 }
