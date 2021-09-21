@@ -92,10 +92,6 @@ public:
             }
         }
         auto ret = accumulate(lenList.back().begin(), lenList.back().end(), LenNode(0, 0));
-        int cnt = 0;
-        for (auto& node : lenList.back()) {
-            cnt += node.cnt;
-        }
         return ret.cnt;
     }
 private:
