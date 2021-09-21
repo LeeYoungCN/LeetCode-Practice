@@ -77,7 +77,7 @@ public:
         vector< vector<LenNode> > lenList(1);
         lenList[0].emplace_back(LenNode(INT_MIN));
         auto cmp = [](vector<LenNode>& vec, int x) -> bool {
-                        return x > vec.back().value;
+            return x > vec.back().value;
         };
         for (int i = 0; i < N; i++) {
             if (nums[i] > lenList.back().back().value) {
