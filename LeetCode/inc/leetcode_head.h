@@ -39,6 +39,7 @@
 #include "lc0162_find_peak_element.h"
 #include "lc0165_compare_version_numbers.h"
 #include "lc0168_excel_sheet_column_title.h"
+#include "lc0179_largest_number.h"
 #include "lc0198_house_robber.h"
 #include "lc0200_number_of_islands.h"
 #include "lc0208_implement_trie_prefix_tree.h"
