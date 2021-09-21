@@ -25,7 +25,6 @@ using namespace std;
 class Solution {
 public:
     int calculate(string s) {
-        int result = 0;
         vector<int> stack;
         auto it = s.begin();
         auto end = s.end();

@@ -68,6 +68,9 @@ struct LenNode {
     int cnt;
     LenNode(int V) : value(V), cnt(1) {}
     LenNode(int V, int n) : value(V), cnt(n) {}
+    LenNode operator+(const LenNode& obj) {
+        return LenNode(obj.value, cnt + obj.cnt);
+    }
 };
 
 class Solution {
@@ -88,11 +91,12 @@ public:
                 Insert(nums[i], it);
             }
         }
+        auto ret = accumulate(lenList.back().begin(), lenList.back().end(), LenNode(0, 0));
         int cnt = 0;
         for (auto& node : lenList.back()) {
             cnt += node.cnt;
         }
-        return cnt;
+        return ret.cnt;
     }
 private:
     void Insert(int value, vector< vector<LenNode> > :: iterator it) {
