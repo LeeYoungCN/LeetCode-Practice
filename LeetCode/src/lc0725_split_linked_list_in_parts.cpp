@@ -85,3 +85,8 @@ PrintListNode(ListNode* head) {
     }
     cout << endl;
 }
+
+void LC0725Test()
+{
+    ;
+}
