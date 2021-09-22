@@ -71,6 +71,7 @@
 #include "lc0645_set_mismatch.h"
 #include "lc0650_2_keys_keyboard.h"
 #include "lc0678_valid_parenthesis_string.h"
+#include "lc0725_split_linked_list_in_parts.h"
 #include "lc0726_number_of_atoms.h"
 #include "lc0740_delete_and_earn.h"
 #include "lc0746_min_cost_climbing_stairs.h"
