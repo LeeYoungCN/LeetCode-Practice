@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode题库1743题, https://leetcode-cn.com/problems/restore-the-array-from-adjacent-pairs/
  * Author       : 李阳
- * Created      : 2021-07-025
+ * Created      : 2021-07-25
  */
 #include <iostream>
 #include <vector>
