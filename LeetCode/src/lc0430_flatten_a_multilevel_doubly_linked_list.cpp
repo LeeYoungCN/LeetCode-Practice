@@ -20,6 +20,8 @@
 #include "public_function.h"
 #include "lc0430_flatten_a_multilevel_doubly_linked_list.h"
 
+using namespace std;
+
 class Node {
 public:
     int val;
