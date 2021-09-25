@@ -66,6 +66,7 @@
 #include "lc0516_longest_palindromic_subsequence.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
+#include "lc0583_delete_operation_for_two_strings.h"
 #include "lc0600_non_negative_integers_without_consecutive_ones.h"
 #include "lc0621_task_scheduler.h"
 #include "lc0637_number_of_longest_increasing_subsequence.h"
