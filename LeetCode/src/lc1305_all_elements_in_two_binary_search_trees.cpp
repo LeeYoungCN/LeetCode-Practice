@@ -86,6 +86,3 @@ public:
         return ret;
     }
 };
-
-void LC0725Test()
-{}

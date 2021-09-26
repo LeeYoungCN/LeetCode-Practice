@@ -71,21 +71,6 @@ private:
     }
 };
 
-PrintListNode(ListNode* head) {
-    if (head) {
-        cout << head->val << ", "
-        head = head->next;
-    } else {
-        cout << "" << endl;
-    }
-    while(head) {
-        cout << head->val;
-        cout << ", "
-        head = head->next;
-    }
-    cout << endl;
-}
-
 void LC0725Test()
 {
     ;
