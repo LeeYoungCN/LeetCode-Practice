@@ -70,6 +70,7 @@
 #include "lc0600_non_negative_integers_without_consecutive_ones.h"
 #include "lc0621_task_scheduler.h"
 #include "lc0637_number_of_longest_increasing_subsequence.h"
+#include "lc0639_decode_ways_ii.h"
 #include "lc0645_set_mismatch.h"
 #include "lc0650_2_keys_keyboard.h"
 #include "lc0678_valid_parenthesis_string.h"
