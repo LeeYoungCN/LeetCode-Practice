@@ -64,6 +64,7 @@
 #include "lc0457_circular_array_loop.h"
 #include "lc0502_ipo.h"
 #include "lc0516_longest_palindromic_subsequence.h"
+#include "lc0517_super_washing_machines.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0583_delete_operation_for_two_strings.h"
