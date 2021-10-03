@@ -8,14 +8,17 @@ fi
 touch ${cfg_file}
 chmod 777 ${cfg_file}
 
-function CreateCfg()
+function write_cfg()
 {
     (echo "${1}")>>${cfg_file}
 }
-
+pushd ..
+root_path=$(pwd)
+popd
 system="${1}"
 
-CreateCfg "system=${system}"
+write_cfg "system=${system}"
+write_cfg "root_path=${root_path}"
 
 cd ..
 workspace=$(pwd)

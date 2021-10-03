@@ -47,6 +47,7 @@
 #include "lc0227_basic_calculator_ii.h"
 #include "lc0233_number_of_digit_one.h"
 #include "lc0240_search_a_2d_matrix_ii.h"
+#include "lc0266_fraction_to_recurring_decimal.h"
 #include "lc0274_h_index.h"
 #include "lc0275_h_index_ii.h"
 #include "lc0279_perfect_squares.h"
