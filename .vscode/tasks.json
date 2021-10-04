@@ -46,6 +46,20 @@
             "problemMatcher": [
                 "$gcc"
             ],
+        },
+        {
+            "label": "Build Tool",
+            "options": {
+                "cwd": "${workspaceFolder}/Tools"
+            },
+            "command": "./build_tool.sh",
+            "args": [
+                "leetcode_file"
+            ],
+            "detail": "创建工具",
+            "problemMatcher": [
+                "$gcc"
+            ],
         }
     ]
 }
