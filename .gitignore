@@ -1,6 +1,8 @@
 
 build/*
+Tools/build/*
 bin/*
+Tools/bin/*
 lib/*
 cmake-build-debug/*
 .vscode/c_cpp_properties.json
