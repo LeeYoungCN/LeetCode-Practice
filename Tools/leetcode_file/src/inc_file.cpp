@@ -21,6 +21,7 @@ IncFile::~IncFile()
 
 void IncFile::CreateFile()
 {
+    WriteFileHead();
     WriteMacDef("ifndef", defStr);
     WriteMacDef("define", defStr);
     WriteIncFiles();

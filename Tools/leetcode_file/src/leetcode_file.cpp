@@ -17,11 +17,13 @@ LeetCodeFile::~LeetCodeFile()
 
 void LeetCodeFile::CreateFile()
 {
-    IncFile inc_file("../" + fileName);
-    inc_file.CreateFile();
+    string description = "LeetCode题库" + probNum + "题, " + netAdress;
     SrcFile src_file("../" + fileName);
     src_file.SetUserFile({"public_function.h"});
+    src_file.SetHeadValue("title", "LeetCode算法练习");
+    src_file.SetHeadValue("Description", description);
     src_file.CreateFile();
+    src_file.CreateIncFile();
 }
 
 void LeetCodeFile::Init()

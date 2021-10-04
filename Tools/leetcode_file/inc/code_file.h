@@ -9,7 +9,9 @@
 #include <iostream>
 #include <regex>
 #include <fstream>
+#include <ctime>
 using namespace std;
+
 class CodeFile {
 public:
     CodeFile(string f);
@@ -22,6 +24,7 @@ public:
     virtual void SetUserFile(vector<string> files);
     virtual void SetFileHead(vector<pair<string, string> > head);
     virtual void SetHeadValue(string key, string value);
+    
 protected:
     virtual void OpenFile();
     virtual void WriteIncFiles();
@@ -31,6 +34,9 @@ protected:
     virtual void WriteUserFile(string head);
     virtual void WriteMacDef(string key, string value);
     virtual void WriteNamespace(string space);
+    virtual void WriteFileHead();
+    virtual void WriteOneFileHead(string key, string value);
+    virtual string GetDate();
 
     string fullFile;
     string fileName;
@@ -39,7 +45,7 @@ protected:
     vector<string> userFiles = {};
     vector<string> nsVec = {"std"};
     vector< pair<string, string> > fileHead = {
-        {"title", "title"}, {"Description", ""}, {"Author", "liyang"}, {"date", ""},
+        {"title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Date", ""},
     };
 };
 #endif // CODE_FILE_H

@@ -20,6 +20,7 @@ public:
     ~SrcFile();
     void CreateFile() override;
     void InsertHeadFile();
+    void CreateIncFile();
 private:
     void Init() override;
     void GetDefStr();
@@ -32,9 +33,6 @@ private:
         "unordered_set", "unordered_map"
     };
     vector<string> userFiles = {};
-    vector< pair<string, string> > fileHead = {
-        {"title", "title"}, {"Description", ""}, {"Author", "liyang"}, {"date", ""},
-    };
 };
 
 #endif // INC_FILE_H
