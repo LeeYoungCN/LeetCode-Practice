@@ -15,10 +15,7 @@ SrcFile::SrcFile(const char* f) : CodeFile(f) {
     Init();
 }
 
-SrcFile::~SrcFile()
-{
-    file.close();
-}
+SrcFile::~SrcFile() {}
 
 void SrcFile::CreateFile()
 {
@@ -32,11 +29,10 @@ void SrcFile::Init() {
     if (!regex_match(fullFile, pattern)) {
         fullFile += ".cpp";
     }
-    CodeFile::SetLibFile(this->libFiles);
-    CodeFile::SetUserFile(this->userFiles);
+    SetLibFile(this->libFiles);
     fileName = GetFileName();
     headFileName = string(fileName, 0, fileName.size() - 3) + "h";
-    file.open(fullFile.c_str(), ios::app | ios::in);
+    OpenFile();
 }
 
 void SrcFile::CreateIncFile()

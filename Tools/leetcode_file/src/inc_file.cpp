@@ -14,19 +14,15 @@ IncFile::IncFile(const char* f) : CodeFile(f) {
     Init();
 }
 
-IncFile::~IncFile()
-{
-    file.close();
-}
+IncFile::~IncFile() {}
 
 void IncFile::CreateFile()
 {
     WriteFileHead();
+    string defStr = GetDefStr();
     WriteMacDef("ifndef", defStr);
     WriteMacDef("define", defStr);
     WriteIncFiles();
-    WriteNamespaces();
-    file << endl;
     WriteMacDef("endif //", defStr);
 }
 
@@ -35,14 +31,13 @@ void IncFile::Init() {
         fullFile += ".h";
     }
     fileName = GetFileName();
-    defStr = GetDefStr();
     OpenFile();
 }
 
 string IncFile::GetDefStr()
 {
     string ret = "";
-    for (auto& chr : fileName) {
+    for (char& chr : fileName) {
         char c = chr;
         if (c == '.') {
             c = '_';

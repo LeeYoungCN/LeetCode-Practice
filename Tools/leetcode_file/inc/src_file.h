@@ -32,7 +32,6 @@ private:
         "vector", "deque", "list", "set", "map",
         "unordered_set", "unordered_map"
     };
-    vector<string> userFiles = {};
 };
 
 #endif // INC_FILE_H

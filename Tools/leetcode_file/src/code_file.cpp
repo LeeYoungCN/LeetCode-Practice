@@ -13,6 +13,7 @@ CodeFile::CodeFile(const char* f) : fullFile(string(f)) {};
 
 CodeFile::~CodeFile()
 {
+    cout << "code close" << endl;
     if (file) {
         file.close();
     }

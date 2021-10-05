@@ -20,10 +20,9 @@ public:
     ~IncFile();
     void CreateFile()override;
 private:
-    void Init()override;
+    void Init() override;
     string GetDefStr();
     regex pattern{".*.h$"};
-    string defStr;
 };
 
 #endif // INC_FILE_H
