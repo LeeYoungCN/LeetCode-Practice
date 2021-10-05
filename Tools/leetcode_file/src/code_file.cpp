@@ -22,6 +22,10 @@ string CodeFile::GetFileName()
     if (fileName.size()) {
         return fileName;
     }
+    regex pattern{suffix};
+    if (!regex_match(fullFile, pattern)) {
+        fullFile += suffix;
+    }
     int pos = 0;
     int len = fullFile.size();
     while (pos < len && fullFile.find('/', pos) != string::npos) {
@@ -32,12 +36,38 @@ string CodeFile::GetFileName()
 
 void CodeFile::SetLibFile(vector<string> files)
 {
+    libFiles = set<string>(files.begin(), files.end());
+}
+
+void CodeFile::SetLibFile(set<string> files)
+{
     libFiles = files;
+}
+
+void CodeFile::AddLibFile(string newFile)
+{
+    if (libFiles.count(newFile)) {
+        return;
+    }
+    libFiles.insert(newFile);
 }
 
 void CodeFile::SetUserFile(vector<string> files)
 {
+    userFiles = set<string>(files.begin(), files.end());
+}
+
+void CodeFile::SetUserFile(set<string> files)
+{
     userFiles = files;
+}
+
+void CodeFile::AddUserFile(string newFile)
+{
+    if (userFiles.count(newFile)) {
+        return;
+    }
+    userFiles.insert(newFile);
 }
 
 void CodeFile::SetFileHead(vector<pair<string, string> > head)
@@ -47,11 +77,22 @@ void CodeFile::SetFileHead(vector<pair<string, string> > head)
 
 void CodeFile::SetHeadValue(string key, string value)
 {
+    bool flag = false;
     for (pair<string, string>& p : fileHead) {
         if (key == p.first) {
             p.second = value;
+            flag = true;
+            break;
         }
     }
+    if (!flag) {
+        fileHead.emplace_back(make_pair(key, value));
+    }
+}
+
+void CodeFile::AddHeadValue(string key, string value)
+{
+    SetHeadValue(key, value);
 }
 
 /******protected******/
@@ -62,20 +103,22 @@ void CodeFile::OpenFile()
 
 void CodeFile::WriteIncFiles()
 {
-    for (string& libFile : this->libFiles) {
+    for (const string& libFile : this->libFiles) {
         WriteLibFile(libFile);
     }
     file << endl;
-    for(string& userFile : userFiles) {
+    for(const string& userFile : userFiles) {
         WriteUserFile(userFile);
     }
+    file << endl;
 }
 
 void CodeFile::WriteNamespaces()
 {
-    for(string& space : nsVec) {
+    for(const string& space : nsVec) {
         WriteNamespace(space);
     }
+    file << endl;
 }
 
 void CodeFile::WriteLibFile(string head)
@@ -105,6 +148,7 @@ void CodeFile::WriteFileHead()
         WriteOneFileHead(p.first, p.second);
     }
     file << " */" << endl;
+    file << endl;
 }
 
 void CodeFile::WriteOneFileHead(string key, string value)

@@ -28,9 +28,7 @@ void IncFile::CreateFile()
 }
 
 void IncFile::Init() {
-    if (!regex_match(fullFile, pattern)) {
-        fullFile += ".h";
-    }
+    suffix = ".h";
     fileName = GetFileName();
     OpenFile();
 }

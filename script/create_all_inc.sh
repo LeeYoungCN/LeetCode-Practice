@@ -50,7 +50,7 @@ function WriteOneFileHead()
     key=${1}
     value=${2}
     max_len=16
-    info_head="\\x20* "
+    info_head="\\x20*\\x20"
     space="\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20\\x20"
     space_num=`expr ${max_len} - ${#key} - 3`
     if [ "${key}" == "Title" ]; then

@@ -19,7 +19,7 @@ void LeetCodeFile::CreateFile()
 {
     string description = "LeetCode题库" + probNum + "题, " + netAdress;
     SrcFile src_file(fileName);
-    src_file.SetUserFile({"public_function.h"});
+    src_file.AddUserFile("public_function.h");
     src_file.SetHeadValue("Title", "LeetCode算法练习");
     src_file.SetHeadValue("Description", description);
     src_file.CreateFile();

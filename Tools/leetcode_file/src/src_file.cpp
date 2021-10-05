@@ -19,12 +19,12 @@ SrcFile::SrcFile(const char* f) : CodeFile(f) {
 SrcFile::~SrcFile() {}
 
 void SrcFile::Init() {
-    if (!regex_match(fullFile, pattern)) {
-        fullFile += ".cpp";
-    }
     SetLibFile(this->libFiles);
+    suffix = ".cpp";
+    string incSuffix = ".h";
     fileName = GetFileName();
-    headFileName = string(fileName, 0, fileName.size() - 3) + "h";
+    incFileName = string(fileName, 0, fileName.size() - suffix.size()) + incSuffix;
+    AddUserFile(incFileName);
     OpenFile();
 }
 
@@ -32,14 +32,13 @@ void SrcFile::CreateFile()
 {
     WriteFileHead();
     WriteIncFiles();
-    WriteUserFile(headFileName);
     WriteNamespaces();
 }
 
 void SrcFile::CreateIncFile()
 {
-    string inc_file_name = string(fullFile, 0, fullFile.size() - 3) + "h";
-    IncFile inc_file(inc_file_name);
-    inc_file.SetFileHead(CodeFile::fileHead);
-    inc_file.CreateFile();
+    string incFileFullName = string(fullFile, 0, fullFile.size() - suffix.size());
+    IncFile incFile(incFileFullName);
+    incFile.SetFileHead(CodeFile::fileHead);
+    incFile.CreateFile();
 }

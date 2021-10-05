@@ -11,6 +11,8 @@
 #include <regex>
 #include <fstream>
 #include <ctime>
+#include <set>
+#include <vector>
 
 using namespace std;
 
@@ -23,9 +25,14 @@ public:
     virtual void CreateFile() = 0;
     virtual string GetFileName();
     virtual void SetLibFile(vector<string> fles);
+    virtual void SetLibFile(set<string> fles);
+    virtual void AddLibFile(string newFile);
     virtual void SetUserFile(vector<string> files);
+    virtual void SetUserFile(set<string> files);
+    virtual void AddUserFile(string newFile);
     virtual void SetFileHead(vector<pair<string, string> > head);
     virtual void SetHeadValue(string key, string value);
+    virtual void AddHeadValue(string key, string value);
 
 protected:
     virtual void OpenFile();
@@ -43,9 +50,10 @@ protected:
     string fullFile;
     string fileName;
     ofstream file;
-    vector<string> libFiles = {};
-    vector<string> userFiles = {};
-    vector<string> nsVec = {"std"};
+    string suffix = "*";
+    set<string> libFiles = {};
+    set<string> userFiles = {};
+    set<string> nsVec = {"std"};
     vector< pair<string, string> > fileHead = {
         {"Title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
     };

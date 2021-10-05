@@ -10,6 +10,7 @@
 #include <iostream>
 #include <regex>
 #include <fstream>
+
 #include "code_file.h"
 
 using namespace std;
@@ -26,9 +27,9 @@ private:
     void Init() override;
     void GetDefStr();
 
-    string headFileName;
+    string incFileName;
     regex pattern{".*.cpp$"};
-    vector<string> libFiles = {
+    set<string> libFiles = {
         "iostream", "algorithm",    "climits",  "numeric",  "vector",
         "deque",    "list",         "set",      "map",      "unordered_set",
         "unordered_map"
