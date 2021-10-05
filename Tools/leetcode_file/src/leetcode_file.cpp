@@ -4,6 +4,7 @@
  * Author       : 李阳
  * Created      : 2021-10-04
  */
+
 #include "leetcode_file.h"
 #include "inc_file.h"
 #include "src_file.h"
@@ -12,15 +13,14 @@ LeetCodeFile::LeetCodeFile(char* num, char* adress) : probNum(num), netAdress(ad
     Init();
 }
 
-LeetCodeFile::~LeetCodeFile()
-{}
+LeetCodeFile::~LeetCodeFile() {}
 
 void LeetCodeFile::CreateFile()
 {
     string description = "LeetCode题库" + probNum + "题, " + netAdress;
     SrcFile src_file(fileName);
     src_file.SetUserFile({"public_function.h"});
-    src_file.SetHeadValue("title", "LeetCode算法练习");
+    src_file.SetHeadValue("Title", "LeetCode算法练习");
     src_file.SetHeadValue("Description", description);
     src_file.CreateFile();
     src_file.CreateIncFile();

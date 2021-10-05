@@ -9,4 +9,3 @@ int main(int argc, char* argv[])
     f.CreateFile();
     return 0;
 }
-

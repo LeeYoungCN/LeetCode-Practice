@@ -2,7 +2,6 @@
 source ../script/public_config.sh
 
 rm -rf ./build
-rm -rf ./bin
 
 for path in $*; do
     if [ -d ./${path} ]; then
@@ -14,4 +13,5 @@ for path in $*; do
         fi
     fi
 done
+
 cmake --build build --target all

@@ -6,6 +6,7 @@
  */
 #ifndef SRC_FILE_H
 #define SRC_FILE_H
+
 #include <iostream>
 #include <regex>
 #include <fstream>
@@ -28,9 +29,9 @@ private:
     string headFileName;
     regex pattern{".*.cpp$"};
     vector<string> libFiles = {
-        "iostream", "algorithm", "climits", "numeric",
-        "vector", "deque", "list", "set", "map",
-        "unordered_set", "unordered_map"
+        "iostream", "algorithm",    "climits",  "numeric",  "vector",
+        "deque",    "list",         "set",      "map",      "unordered_set",
+        "unordered_map"
     };
 };
 

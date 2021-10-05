@@ -4,6 +4,7 @@
  * Author       : 李阳
  * Created      : 2021-10-04
  */
+
 #include "src_file.h"
 #include "inc_file.h"
 
@@ -17,14 +18,6 @@ SrcFile::SrcFile(const char* f) : CodeFile(f) {
 
 SrcFile::~SrcFile() {}
 
-void SrcFile::CreateFile()
-{
-    WriteFileHead();
-    WriteIncFiles();
-    WriteUserFile(headFileName);
-    WriteNamespaces();
-}
-
 void SrcFile::Init() {
     if (!regex_match(fullFile, pattern)) {
         fullFile += ".cpp";
@@ -33,6 +26,14 @@ void SrcFile::Init() {
     fileName = GetFileName();
     headFileName = string(fileName, 0, fileName.size() - 3) + "h";
     OpenFile();
+}
+
+void SrcFile::CreateFile()
+{
+    WriteFileHead();
+    WriteIncFiles();
+    WriteUserFile(headFileName);
+    WriteNamespaces();
 }
 
 void SrcFile::CreateIncFile()

@@ -4,6 +4,7 @@
  * Author       : 李阳
  * Created      : 2021-10-04
  */
+
 #include "code_file.h"
 
 /******public******/
@@ -111,7 +112,7 @@ void CodeFile::WriteOneFileHead(string key, string value)
     const string startStr = " * ";
     const int N = 16;
     file << startStr ;
-    if (key != "title") {
+    if (key != "Title") {
         file << key << string(N - key.size() - startStr.size(), ' ') << " : ";
     }
     if (key == "Created") {

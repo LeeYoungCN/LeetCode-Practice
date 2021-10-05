@@ -6,10 +6,12 @@
  */
 #ifndef CODE_FILE_H
 #define CODE_FILE_H
+
 #include <iostream>
 #include <regex>
 #include <fstream>
 #include <ctime>
+
 using namespace std;
 
 class CodeFile {
@@ -24,7 +26,7 @@ public:
     virtual void SetUserFile(vector<string> files);
     virtual void SetFileHead(vector<pair<string, string> > head);
     virtual void SetHeadValue(string key, string value);
-    
+
 protected:
     virtual void OpenFile();
     virtual void WriteIncFiles();
@@ -45,7 +47,8 @@ protected:
     vector<string> userFiles = {};
     vector<string> nsVec = {"std"};
     vector< pair<string, string> > fileHead = {
-        {"title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
+        {"Title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
     };
 };
+
 #endif // CODE_FILE_H
