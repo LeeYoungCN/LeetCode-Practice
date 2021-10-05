@@ -45,7 +45,7 @@ protected:
     vector<string> userFiles = {};
     vector<string> nsVec = {"std"};
     vector< pair<string, string> > fileHead = {
-        {"title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Date", ""},
+        {"title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
     };
 };
 #endif // CODE_FILE_H

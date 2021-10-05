@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description   : LeetCode题库284题, https://leetcode-cn.com/problems/peeking-iterator/
  * Author        : 李阳
- * Date          : 2021-10-05 11:23:07
+ * Created       : 2021-10-05 11:23:07
  */
 #include <iostream>
 #include <algorithm>

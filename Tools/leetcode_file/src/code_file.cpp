@@ -13,10 +13,7 @@ CodeFile::CodeFile(const char* f) : fullFile(string(f)) {};
 
 CodeFile::~CodeFile()
 {
-    cout << "code close" << endl;
-    if (file) {
-        file.close();
-    }
+    file.close();
 }
 
 string CodeFile::GetFileName()
@@ -117,7 +114,7 @@ void CodeFile::WriteOneFileHead(string key, string value)
     if (key != "title") {
         file << key << string(N - key.size() - startStr.size(), ' ') << " : ";
     }
-    if (key == "Date") {
+    if (key == "Created") {
         value = GetDate();
     }
     file << value << endl;

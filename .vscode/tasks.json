@@ -60,6 +60,18 @@
             "problemMatcher": [
                 "$gcc"
             ],
+        },
+        {
+            "label": "Move Code File",
+            "options": {
+                "cwd": "${workspaceFolder}/script"
+            },
+            "command": "./move_file.sh",
+            "args": [],
+            "detail": "移动代码文件",
+            "problemMatcher": [
+                "$gcc"
+            ],
         }
     ]
 }
