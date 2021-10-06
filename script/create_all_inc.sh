@@ -92,17 +92,23 @@ function WriteEndMacDef()
     WriteOneMacDef "endif" "// ${def_str}"
 }
 
-function WriteOneIncFile()
+function WriteOneIncLibFile()
+{
+    info="#include <$1>"
+    WriteData ${info}
+}
+
+function WriteOneIncUserFile()
 {
     info="#include \"$1\""
     WriteData ${info}
 }
 
-function WriteAllIncFile()
+function WriteAllIncUserFile()
 {
     for file_name in ${head_format}; do
         if [ -e ${file_name} -a "${file_name}" != "${file}" ]; then
-            WriteOneIncFile ${file_name}
+            WriteOneIncUserFile ${file_name}
         fi
     done
     WriteData
@@ -111,5 +117,5 @@ function WriteAllIncFile()
 Init
 WriteFileHead
 WriteStartMacDef
-WriteAllIncFile
+WriteAllIncUserFile
 WriteEndMacDef

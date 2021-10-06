@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-10-05 19:19:40
+ * Created      : 2021-10-06 10:07:25
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -59,6 +59,7 @@
 #include "lc0405_convert_a_number_to_hexadecimal.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0413_arithmetic_slices.h"
+#include "lc0414_third_maximum_number.h"
 #include "lc0430_flatten_a_multilevel_doubly_linked_list.h"
 #include "lc0437_path_sum_iii.h"
 #include "lc0443_string_compression.h"
