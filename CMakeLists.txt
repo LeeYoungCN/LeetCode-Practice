@@ -10,20 +10,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g")
 
-set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 set(LEETCODE_PATH    ${CMAKE_CURRENT_SOURCE_DIR}/LeetCode)
 set(PUBLIC_FUNC_PATH ${CMAKE_CURRENT_SOURCE_DIR}/public_function)
 set(GOOGLE_TEST_PATH ${CMAKE_CURRENT_SOURCE_DIR}/google_test)
 
-include_directories(${PUBLIC_FUNC_PATH}/inc)
+include_directories(${PUBLIC_FUNC_PATH}/inc ${GOOGLE_TEST_PATH}/inc)
 
 add_library(${LIB_NAME} STATIC ${PUBLIC_FUNC_SRCS})
 add_subdirectory(${PUBLIC_FUNC_PATH})
 
 add_executable(${TARGET_NAME} main.cpp)
-add_subdirectory(${LEETCODE_PATH} ${GOOGLE_TEST_PATH})
-
-target_link_libraries(${TARGET_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/lib/lib${LIB_NAME}.a)
+add_subdirectory(${LEETCODE_PATH})
+file(GLOB USER_LIB ${LIBRARY_OUTPUT_PATH}/*.a)
+file(GLOB GTEST_LIB ${GOOGLE_TEST_PATH}/lib/*.a)
+target_link_libraries(${TARGET_NAME} ${USER_LIB} ${GTEST_LIB})
