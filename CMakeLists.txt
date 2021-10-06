@@ -27,4 +27,3 @@ add_executable(${TARGET_NAME} main.cpp)
 add_subdirectory(${LEETCODE_PATH})
 
 target_link_libraries(${TARGET_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/lib/lib${LIB_NAME}.a)
-
