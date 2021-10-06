@@ -6,8 +6,5 @@ set(EXECUTABLE_OUTPUT_PATH ${TOOLS_ROOT_PATH}/bin)
 set(LIBRARY_OUTPUT_PATH ${TOOLS_ROOT_PATH}/lib)
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g")
-
 message("======Configure path ${TARGET_PATH}======")
 add_subdirectory(${TOOLS_ROOT_PATH}/${TARGET_PATH})
