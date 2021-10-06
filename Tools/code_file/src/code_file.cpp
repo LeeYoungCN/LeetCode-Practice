@@ -7,7 +7,7 @@
 
 #include "code_file.h"
 
-/******public******/
+/********************public********************/
 CodeFile::CodeFile(string f) : fullFile(f) {};
 
 CodeFile::CodeFile(const char* f) : fullFile(string(f)) {};
@@ -34,6 +34,7 @@ string CodeFile::GetFileName()
     return string(fullFile, pos, len);
 }
 
+/********************编辑库文件********************/
 void CodeFile::SetLibFile(vector<string> files)
 {
     libFiles = set<string>(files.begin(), files.end());
@@ -52,6 +53,7 @@ void CodeFile::AddLibFile(string newFile)
     libFiles.insert(newFile);
 }
 
+/********************编辑用户头文件********************/
 void CodeFile::SetUserFile(vector<string> files)
 {
     userFiles = set<string>(files.begin(), files.end());
@@ -70,6 +72,26 @@ void CodeFile::AddUserFile(string newFile)
     userFiles.insert(newFile);
 }
 
+/********************编辑用户头文件********************/
+void CodeFile::SetNameSpaces(vector<string> spaces)
+{
+    nameSpaces = set<string>(spaces.begin(), spaces.end());
+}
+
+void CodeFile::SetNameSpaces(set<string> spaces)
+{
+    nameSpaces = spaces;
+}
+
+void CodeFile::AddNameSpace(string space)
+{
+    if (nameSpaces.count(space)) {
+        return;
+    }
+    nameSpaces.insert(space);
+}
+
+/********************编辑文件头********************/
 void CodeFile::SetFileHead(vector<pair<string, string> > head)
 {
     fileHead = head;
@@ -95,74 +117,10 @@ void CodeFile::AddHeadValue(string key, string value)
     SetHeadValue(key, value);
 }
 
-/******protected******/
+/********************protected********************/
 void CodeFile::OpenFile()
 {
     file.open(fullFile.c_str(), ios::app | ios::in);
-}
-
-void CodeFile::WriteIncFiles()
-{
-    for (const string& libFile : this->libFiles) {
-        WriteLibFile(libFile);
-    }
-    file << endl;
-    for(const string& userFile : userFiles) {
-        WriteUserFile(userFile);
-    }
-    file << endl;
-}
-
-void CodeFile::WriteNamespaces()
-{
-    for(const string& space : nsVec) {
-        WriteNamespace(space);
-    }
-    file << endl;
-}
-
-void CodeFile::WriteLibFile(string head)
-{
-    file << "#include <" << head << ">" << endl;
-}
-
-void CodeFile::WriteUserFile(string head)
-{
-    file << "#include \"" << head << "\"" << endl;
-}
-
-void CodeFile::WriteMacDef(string key, string value)
-{
-    file << "#" << key << " " << value << endl;
-}
-
-void CodeFile::WriteNamespace(string space)
-{
-    file << "using namespace " << space << ";" << endl;
-}
-
-void CodeFile::WriteFileHead()
-{
-    file << "/*" << endl;
-    for (pair<string, string>& p : fileHead) {
-        WriteOneFileHead(p.first, p.second);
-    }
-    file << " */" << endl;
-    file << endl;
-}
-
-void CodeFile::WriteOneFileHead(string key, string value)
-{
-    const string startStr = " * ";
-    const int N = 16;
-    file << startStr ;
-    if (key != "Title") {
-        file << key << string(N - key.size() - startStr.size(), ' ') << " : ";
-    }
-    if (key == "Created") {
-        value = GetDate();
-    }
-    file << value << endl;
 }
 
 string CodeFile::GetDate()
@@ -185,4 +143,68 @@ string CodeFile::GetDate()
     timeStr += toStr(ltm->tm_min,  ":");
     timeStr += toStr(ltm->tm_sec,  "");
     return timeStr;
+}
+
+void CodeFile::WriteFileHead()
+{
+    file << "/*" << endl;
+    for (pair<string, string>& p : fileHead) {
+        WriteOneFileHead(p.first, p.second);
+    }
+    file << " */" << endl;
+    file << endl;
+}
+
+void CodeFile::WriteIncFiles()
+{
+    for (const string& libFile : this->libFiles) {
+        WriteLibFile(libFile);
+    }
+    file << endl;
+    for(const string& userFile : userFiles) {
+        WriteUserFile(userFile);
+    }
+    file << endl;
+}
+
+void CodeFile::WriteNamespaces()
+{
+    for(const string& space : nameSpaces) {
+        WriteOneNameSpace(space);
+    }
+    file << endl;
+}
+
+void CodeFile::WriteLibFile(string head)
+{
+    file << "#include <" << head << ">" << endl;
+}
+
+void CodeFile::WriteUserFile(string head)
+{
+    file << "#include \"" << head << "\"" << endl;
+}
+
+void CodeFile::WriteMacDef(string key, string value)
+{
+    file << "#" << key << " " << value << endl;
+}
+
+void CodeFile::WriteOneNameSpace(string space)
+{
+    file << "using namespace " << space << ";" << endl;
+}
+
+void CodeFile::WriteOneFileHead(string key, string value)
+{
+    const string startStr = " * ";
+    const int N = 16;
+    file << startStr ;
+    if (key != "Title") {
+        file << key << string(N - key.size() - startStr.size(), ' ') << " : ";
+    }
+    if (key == "Created") {
+        value = GetDate();
+    }
+    file << value << endl;
 }

@@ -24,28 +24,36 @@ public:
     virtual void Init() = 0;
     virtual void CreateFile() = 0;
     virtual string GetFileName();
+    /*编辑库文件*/
     virtual void SetLibFile(vector<string> fles);
     virtual void SetLibFile(set<string> fles);
     virtual void AddLibFile(string newFile);
+    /*编辑用户头文件*/
     virtual void SetUserFile(vector<string> files);
     virtual void SetUserFile(set<string> files);
     virtual void AddUserFile(string newFile);
+    /*编辑命名空间*/
+    virtual void SetNameSpaces(vector<string> spaces);
+    virtual void SetNameSpaces(set<string> spaces);
+    virtual void AddNameSpace(string spaces);
+    /*编辑文件头*/
     virtual void SetFileHead(vector<pair<string, string> > head);
     virtual void SetHeadValue(string key, string value);
     virtual void AddHeadValue(string key, string value);
 
 protected:
     virtual void OpenFile();
+    virtual string GetDate();
+
+    virtual void WriteFileHead();
     virtual void WriteIncFiles();
     virtual void WriteNamespaces();
 
     virtual void WriteLibFile(string head);
     virtual void WriteUserFile(string head);
     virtual void WriteMacDef(string key, string value);
-    virtual void WriteNamespace(string space);
-    virtual void WriteFileHead();
+    virtual void WriteOneNameSpace(string space);
     virtual void WriteOneFileHead(string key, string value);
-    virtual string GetDate();
 
     string fullFile;
     string fileName;
@@ -53,7 +61,7 @@ protected:
     string suffix = "*";
     set<string> libFiles = {};
     set<string> userFiles = {};
-    set<string> nsVec = {"std"};
+    set<string> nameSpaces = {"std"};
     vector< pair<string, string> > fileHead = {
         {"Title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
     };
