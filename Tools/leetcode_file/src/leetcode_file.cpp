@@ -17,13 +17,35 @@ LeetCodeFile::~LeetCodeFile() {}
 
 void LeetCodeFile::CreateFile()
 {
+    CreateCodeFile();
+    CreateMainFile();
+}
+
+void LeetCodeFile::CreateCodeFile()
+{
     string description = "LeetCode题库" + probNum + "题, " + netAdress;
     SrcFile src_file(fileName);
+    src_file.SetLibFile(libFiles);
     src_file.AddUserFile("public_function.h");
+    src_file.AddSameIncFile();
     src_file.SetHeadValue("Title", "LeetCode算法练习");
     src_file.SetHeadValue("Description", description);
     src_file.CreateFile();
     src_file.CreateIncFile();
+    src_file.CreateTestFile();
+}
+
+void LeetCodeFile::CreateMainFile()
+{
+    string mainName = "main.cpp";
+    SrcFile src_file(mainName);
+    src_file.SetHeadValue("Title", "LeetCode算法练习");
+    src_file.CreateFile();
+}
+
+void CreateTestFile()
+{
+    ;
 }
 
 void LeetCodeFile::Init()
@@ -35,4 +57,5 @@ void LeetCodeFile::Init()
     for (int i = start; i < end; i++) {
         fileName.push_back(netAdress[i] == '-'? '_': netAdress[i]);
     }
+
 }

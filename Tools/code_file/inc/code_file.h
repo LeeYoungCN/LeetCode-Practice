@@ -42,6 +42,7 @@ public:
     virtual void AddHeadValue(string key, string value);
 
 protected:
+    virtual void InitNameInfo();
     virtual void OpenFile();
     virtual string GetDate();
 
@@ -57,8 +58,9 @@ protected:
 
     string fullFile;
     string fileName;
+    string filePath;
     ofstream file;
-    string suffix = "*";
+    string suffix = "";
     set<string> libFiles = {};
     set<string> userFiles = {};
     set<string> nameSpaces = {"std"};

@@ -8,6 +8,7 @@
 #define LEETCODE_FILE_H
 
 #include <iostream>
+#include <set>
 
 using namespace std;
 
@@ -17,10 +18,17 @@ public:
     ~LeetCodeFile();
     void CreateFile();
 private:
+    void CreateCodeFile();
+    void CreateMainFile();
     void Init();
     string probNum;
     string netAdress;
     string fileName = "lc";
+    set<string> libFiles = {
+        "iostream", "algorithm",    "climits",  "numeric",  "vector",
+        "deque",    "list",         "set",      "map",      "unordered_set",
+        "unordered_map"
+    };
 };
 
 #endif // LEETCODE_FILE_H

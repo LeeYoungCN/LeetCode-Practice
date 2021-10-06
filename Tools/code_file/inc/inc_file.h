@@ -23,7 +23,6 @@ public:
 private:
     void Init() override;
     string GetDefStr();
-    regex pattern{".*.h$"};
 };
 
 #endif // INC_FILE_H

@@ -19,19 +19,7 @@ CodeFile::~CodeFile()
 
 string CodeFile::GetFileName()
 {
-    if (fileName.size()) {
-        return fileName;
-    }
-    regex pattern{suffix};
-    if (!regex_match(fullFile, pattern)) {
-        fullFile += suffix;
-    }
-    int pos = 0;
-    int len = fullFile.size();
-    while (pos < len && fullFile.find('/', pos) != string::npos) {
-        pos = fullFile.find('/', pos) + 1;
-    }
-    return string(fullFile, pos, len);
+    return fileName;
 }
 
 /********************编辑库文件********************/
@@ -118,6 +106,22 @@ void CodeFile::AddHeadValue(string key, string value)
 }
 
 /********************protected********************/
+void CodeFile::InitNameInfo()
+{
+    string patternStr = ".*" + suffix + "$";
+    regex pattern{patternStr};
+    if (!regex_match(fullFile, pattern)) {
+        fullFile += suffix;
+    }
+    int pos = 0;
+    int len = fullFile.size();
+    while (pos < len && fullFile.find('/', pos) != string::npos) {
+        pos = fullFile.find('/', pos) + 1;
+    }
+    fileName = string(fullFile, pos, len);
+    filePath = string(fullFile, 0, fullFile.size() - fileName.size());
+}
+
 void CodeFile::OpenFile()
 {
     file.open(fullFile.c_str(), ios::app | ios::in);

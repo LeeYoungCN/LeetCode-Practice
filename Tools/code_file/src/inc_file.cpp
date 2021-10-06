@@ -19,6 +19,7 @@ IncFile::~IncFile() {}
 
 void IncFile::CreateFile()
 {
+    OpenFile();
     WriteFileHead();
     string defStr = GetDefStr();
     WriteMacDef("ifndef", defStr);
@@ -29,8 +30,7 @@ void IncFile::CreateFile()
 
 void IncFile::Init() {
     suffix = ".h";
-    fileName = GetFileName();
-    OpenFile();
+    InitNameInfo();
 }
 
 string IncFile::GetDefStr()

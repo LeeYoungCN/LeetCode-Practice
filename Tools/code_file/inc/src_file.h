@@ -23,17 +23,13 @@ public:
     void CreateFile() override;
     void InsertHeadFile();
     void CreateIncFile();
+    void CreateTestFile();
+    void AddSameIncFile();
+    string GetIncFileName();
 private:
     void Init() override;
-    void GetDefStr();
 
-    string incFileName;
-    regex pattern{".*.cpp$"};
-    set<string> libFiles = {
-        "iostream", "algorithm",    "climits",  "numeric",  "vector",
-        "deque",    "list",         "set",      "map",      "unordered_set",
-        "unordered_map"
-    };
+    string incFileName = "";
 };
 
 #endif // INC_FILE_H
