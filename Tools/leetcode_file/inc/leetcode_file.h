@@ -24,10 +24,13 @@ private:
     string probNum;
     string netAdress;
     string fileName = "lc";
+    string publicFuncName;
+    string description;
+    string para = "(int argc, char** argv)";
     set<string> libFiles = {
         "iostream", "algorithm",    "climits",  "numeric",  "vector",
         "deque",    "list",         "set",      "map",      "unordered_set",
-        "unordered_map"
+        "unordered_map", "cstdio"
     };
 };
 

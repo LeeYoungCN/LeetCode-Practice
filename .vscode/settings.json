@@ -79,6 +79,8 @@
         "mutex": "cpp",
         "ratio": "cpp",
         "regex": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "any": "cpp",
+        "variant": "cpp"
     }
 }

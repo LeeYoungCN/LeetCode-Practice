@@ -12,7 +12,6 @@ for path in $*; do
         else
             ${cmake_command}
         fi
+        cmake --build build --target all
     fi
 done
-
-cmake --build build --target all

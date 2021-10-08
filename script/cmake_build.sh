@@ -11,5 +11,4 @@ else
      ${cmake_command}
 fi
 
-cmake --build build --target public
-cmake --build build --target LeetCodePractice
+cmake --build build --target all

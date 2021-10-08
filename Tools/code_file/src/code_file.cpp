@@ -105,6 +105,28 @@ void CodeFile::AddHeadValue(string key, string value)
     SetHeadValue(key, value);
 }
 
+/********************编辑函数********************/
+void CodeFile::SetFunction(vector<pair<string, vector<string>>> functions)
+{
+    this->functions = functions;
+}
+
+void CodeFile::AddFunction(string funcName, vector<string> funcContent)
+{
+    this->functions.emplace_back(make_pair(funcName, funcContent));
+}
+
+/********************编辑内容********************/
+void CodeFile::SetLine(vector<string> lines)
+{
+    this->lines = lines;
+}
+
+void CodeFile::AddLine(string line)
+{
+    this->lines.emplace_back(line);
+}
+
 /********************protected********************/
 void CodeFile::InitNameInfo()
 {
@@ -164,11 +186,15 @@ void CodeFile::WriteIncFiles()
     for (const string& libFile : this->libFiles) {
         WriteLibFile(libFile);
     }
-    file << endl;
+    if (!libFiles.empty()) {
+        file << endl;
+    }
     for(const string& userFile : userFiles) {
         WriteUserFile(userFile);
     }
-    file << endl;
+    if (!userFiles.empty()) {
+        file << endl;
+    }
 }
 
 void CodeFile::WriteNamespaces()
@@ -176,7 +202,19 @@ void CodeFile::WriteNamespaces()
     for(const string& space : nameSpaces) {
         WriteOneNameSpace(space);
     }
-    file << endl;
+    if (!nameSpaces.empty()) {
+        file << endl;
+    }
+}
+
+void CodeFile::WriteLines()
+{
+    for (const string& line : lines) {
+        file << line << ";" << endl;
+    }
+    if (!lines.empty()) {
+        file << endl;
+    }
 }
 
 void CodeFile::WriteLibFile(string head)

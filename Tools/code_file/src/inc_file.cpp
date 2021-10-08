@@ -24,13 +24,26 @@ void IncFile::CreateFile()
     string defStr = GetDefStr();
     WriteMacDef("ifndef", defStr);
     WriteMacDef("define", defStr);
+    file << endl;
     WriteIncFiles();
+    WriteFunctions();
     WriteMacDef("endif //", defStr);
 }
 
 void IncFile::Init() {
     suffix = ".h";
     InitNameInfo();
+}
+
+void IncFile::WriteFunctions()
+{
+    for (auto& [name, content] : functions)
+    {
+        file << name << ";" << endl;
+    }
+    if (!functions.empty()) {
+        file << endl;
+    }
 }
 
 string IncFile::GetDefStr()

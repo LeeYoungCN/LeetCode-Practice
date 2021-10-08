@@ -1,1 +1,1 @@
-set(CMAKE_SYSTEM Linux)
+set(SYSTEM Linux)

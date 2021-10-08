@@ -18,18 +18,13 @@ SrcFile::SrcFile(const char* f) : CodeFile(f) {
 
 SrcFile::~SrcFile() {}
 
-void SrcFile::Init() {
-    suffix = ".cpp";
-    InitNameInfo();
-    GetIncFileName();
-}
-
 void SrcFile::CreateFile()
 {
     OpenFile();
     WriteFileHead();
     WriteIncFiles();
     WriteNamespaces();
+    WriteFunctions();
 }
 
 void SrcFile::CreateIncFile()
@@ -37,17 +32,8 @@ void SrcFile::CreateIncFile()
     string incFileFullName = filePath + incFileName;
     IncFile incFile(incFileFullName);
     incFile.SetFileHead(fileHead);
+    incFile.SetFunction(functions);
     incFile.CreateFile();
-}
-
-void SrcFile::CreateTestFile()
-{
-    string testFileFullName = filePath + "test_" + fileName;
-    SrcFile srcFile(testFileFullName);
-    srcFile.SetFileHead(fileHead);
-    srcFile.AddUserFile(incFileName);
-    srcFile.AddUserFile("gtest/gtest.h");
-    srcFile.CreateFile();
 }
 
 void SrcFile::AddSameIncFile()
@@ -62,4 +48,24 @@ string SrcFile::GetIncFileName()
         incFileName = string(fileName, 0, fileName.size() - suffix.size()) + incSuffix;
     }
     return incFileName;
+}
+
+void SrcFile::Init() {
+    suffix = ".cpp";
+    InitNameInfo();
+    GetIncFileName();
+}
+
+void SrcFile::WriteFunctions()
+{
+    for (auto& [name, content] : functions)
+    {
+        file << name << endl;
+        file << "{" << endl;
+        for (const string& line : content) {
+            file << "    " << line << ";" << endl;
+        }
+        file << "}" << endl;
+        file << endl;
+    }
 }

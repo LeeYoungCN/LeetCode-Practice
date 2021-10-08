@@ -1,1 +1,1 @@
-set(CMAKE_SYSTEM MacOS)
+set(SYSTEM MacOS)

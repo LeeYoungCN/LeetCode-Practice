@@ -22,6 +22,7 @@ public:
     void CreateFile()override;
 private:
     void Init() override;
+    void WriteFunctions() override;
     string GetDefStr();
 };
 

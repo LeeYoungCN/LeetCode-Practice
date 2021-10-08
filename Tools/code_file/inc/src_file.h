@@ -23,11 +23,11 @@ public:
     void CreateFile() override;
     void InsertHeadFile();
     void CreateIncFile();
-    void CreateTestFile();
     void AddSameIncFile();
     string GetIncFileName();
 private:
     void Init() override;
+    void WriteFunctions() override;
 
     string incFileName = "";
 };

@@ -54,6 +54,7 @@
             },
             "command": "./build_tool.sh",
             "args": [
+                "code_file",
                 "leetcode_file"
             ],
             "detail": "创建工具",

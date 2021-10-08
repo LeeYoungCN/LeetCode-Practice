@@ -40,6 +40,12 @@ public:
     virtual void SetFileHead(vector<pair<string, string> > head);
     virtual void SetHeadValue(string key, string value);
     virtual void AddHeadValue(string key, string value);
+    /*编辑函数*/
+    virtual void SetFunction(vector<pair<string, vector<string>>> functions);
+    virtual void AddFunction(string funcName, vector<string> funcContent);
+    /*编辑内容*/
+    virtual void SetLine(vector<string> lines);
+    virtual void AddLine(string line);
 
 protected:
     virtual void InitNameInfo();
@@ -49,6 +55,8 @@ protected:
     virtual void WriteFileHead();
     virtual void WriteIncFiles();
     virtual void WriteNamespaces();
+    virtual void WriteFunctions() = 0;
+    virtual void WriteLines();
 
     virtual void WriteLibFile(string head);
     virtual void WriteUserFile(string head);
@@ -63,10 +71,12 @@ protected:
     string suffix = "";
     set<string> libFiles = {};
     set<string> userFiles = {};
-    set<string> nameSpaces = {"std"};
+    set<string> nameSpaces = {};
     vector< pair<string, string> > fileHead = {
         {"Title", ""}, {"Description", ""}, {"Author", "李阳"}, {"Created", ""},
     };
+    vector<pair<string, vector<string>>> functions = {};
+    vector<string> lines = {};
 };
 
 #endif // CODE_FILE_H
