@@ -25,3 +25,6 @@ workspace=$(pwd)
 cd ./platform/${system}
 cp -rf .vscode ${workspace}
 cp -rf * ${workspace}
+
+cd ${root_path}/Tools/
+./build_tool.sh code_file leetcode_file

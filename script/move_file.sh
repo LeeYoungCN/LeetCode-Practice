@@ -5,14 +5,17 @@ cpp_path=${target_path}/src
 head_path=${target_path}/inc
 cpp_format="*.cpp"
 head_format="*.h"
-pushd ${root_path}
+pushd ${root_path}/Main/
+
+if [ -e main.cpp ]; then
+    rm -rf main.cpp
+fi
 
 function move() {
     path=${2}
     for file_name in ${1}
     do
-        #file_name=${full_file#*/}
-        if [ -e ${file_name}  -a "${file_name}" != "main.cpp" ]; then
+        if [ -e ${file_name} ]; then
             cp -rf ${file_name} ${path}
             rm -rf ${file_name}
             echo "move $file_name sucess!"
