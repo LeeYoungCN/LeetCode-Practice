@@ -22,15 +22,7 @@ function GetDefStr()
 
 function GetCreateDate()
 {
-    tmp=$(date)
-    tmp=${tmp/ /0}
-    year=${tmp:0:4}
-    mon=${tmp:5:2}
-    day=${tmp:8:2}
-    hour=${tmp:16:2}
-    minu=${tmp:19:2}
-    sec=${tmp:22:2}
-    created_date="${year}-${mon}-${day} ${hour}:${minu}:${sec}"
+    created_date="$(date "+%Y-%m-%d %H:%M:%S")"
 }
 
 function Init()

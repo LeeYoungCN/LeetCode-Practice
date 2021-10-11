@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-10-10 11:52:41
+ * Created      : 2021-10-11 21:24:28
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -48,6 +48,7 @@
 #include "lc0233_number_of_digit_one.h"
 #include "lc0240_search_a_2d_matrix_ii.h"
 #include "lc0266_fraction_to_recurring_decimal.h"
+#include "lc0273_integer_to_english_words.h"
 #include "lc0274_h_index.h"
 #include "lc0275_h_index_ii.h"
 #include "lc0279_perfect_squares.h"
