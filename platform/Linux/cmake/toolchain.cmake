@@ -1,1 +1,1 @@
-set(SYSTEM Linux)
+set(OS Linux)

@@ -1,1 +1,1 @@
-set(SYSTEM MacOS)
+set(OS MacOS)
