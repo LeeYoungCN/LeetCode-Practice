@@ -6,7 +6,7 @@ rm -rf ./build
 
 for path in $*; do
     if [ -d ./${path} ]; then
-        cmake_command="cmake -S . -B ./build -DTARGET_PATH=$path -DCMAKE_TOOLCHAIN_FILE=${cmake_tool}"
+        cmake_command="cmake -S . -B ./build -DTARGET_PATH=$path"
         if [ "${system}" = "Windows" ]; then
             ${cmake_command} -G "MinGW Makefiles"
         else

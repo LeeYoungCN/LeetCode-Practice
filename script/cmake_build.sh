@@ -3,7 +3,7 @@
 source ./public_config.sh
 
 cd ..
-cmake_command='cmake -S . -B ./build -DCMAKE_TOOLCHAIN_FILE=./cmake/toolchain.cmake'
+cmake_command="cmake -S . -B ./build"
 
 if [ "${system}" = "Windows" ]; then
      ${cmake_command} -G "MinGW Makefiles"

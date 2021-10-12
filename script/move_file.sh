@@ -27,4 +27,4 @@ move "${cpp_format}"  "${cpp_path}"
 move "${head_format}" "${head_path}"
 
 popd
-./create_all_inc.sh leetcode_head.h ${head_path}
+./create_all_inc.sh "leetcode_head.h" ${head_path}

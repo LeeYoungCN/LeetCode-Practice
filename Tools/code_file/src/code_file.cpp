@@ -25,12 +25,12 @@ string CodeFile::GetFileName()
 /********************编辑库文件********************/
 void CodeFile::SetLibFile(vector<string> files)
 {
-    libFiles = set<string>(files.begin(), files.end());
+    this->libFiles = set<string>(files.begin(), files.end());
 }
 
 void CodeFile::SetLibFile(set<string> files)
 {
-    libFiles = files;
+    this->libFiles = files;
 }
 
 void CodeFile::AddLibFile(string newFile)
@@ -38,65 +38,65 @@ void CodeFile::AddLibFile(string newFile)
     if (libFiles.count(newFile)) {
         return;
     }
-    libFiles.insert(newFile);
+    this->libFiles.insert(newFile);
 }
 
 /********************编辑用户头文件********************/
 void CodeFile::SetUserFile(vector<string> files)
 {
-    userFiles = set<string>(files.begin(), files.end());
+    this->userFiles = set<string>(files.begin(), files.end());
 }
 
 void CodeFile::SetUserFile(set<string> files)
 {
-    userFiles = files;
+    this->userFiles = files;
 }
 
 void CodeFile::AddUserFile(string newFile)
 {
-    if (userFiles.count(newFile)) {
+    if (this->userFiles.count(newFile)) {
         return;
     }
-    userFiles.insert(newFile);
+    this->userFiles.insert(newFile);
 }
 
 /********************编辑用户头文件********************/
 void CodeFile::SetNameSpaces(vector<string> spaces)
 {
-    nameSpaces = set<string>(spaces.begin(), spaces.end());
+    this->nameSpaces = set<string>(spaces.begin(), spaces.end());
 }
 
 void CodeFile::SetNameSpaces(set<string> spaces)
 {
-    nameSpaces = spaces;
+    this->nameSpaces = spaces;
 }
 
 void CodeFile::AddNameSpace(string space)
 {
-    if (nameSpaces.count(space)) {
+    if (this->nameSpaces.count(space)) {
         return;
     }
-    nameSpaces.insert(space);
+    this->nameSpaces.insert(space);
 }
 
 /********************编辑文件头********************/
 void CodeFile::SetFileHead(vector<pair<string, string> > head)
 {
-    fileHead = head;
+    this->fileHead = head;
 }
 
 void CodeFile::SetHeadValue(string key, string value)
 {
     bool flag = false;
-    for (pair<string, string>& p : fileHead) {
-        if (key == p.first) {
-            p.second = value;
+    for (auto& [K, V] : this->fileHead) {
+        if (key == K) {
+            V = value;
             flag = true;
             break;
         }
     }
     if (!flag) {
-        fileHead.emplace_back(make_pair(key, value));
+        this->fileHead.emplace_back(make_pair(key, value));
     }
 }
 
@@ -133,15 +133,15 @@ void CodeFile::InitNameInfo()
     string patternStr = ".*" + suffix + "$";
     regex pattern{patternStr};
     if (!regex_match(fullFile, pattern)) {
-        fullFile += suffix;
+        this->fullFile += suffix;
     }
     int pos = 0;
-    int len = fullFile.size();
-    while (pos < len && fullFile.find('/', pos) != string::npos) {
-        pos = fullFile.find('/', pos) + 1;
+    int len = this->fullFile.size();
+    while (pos < len && this->fullFile.find('/', pos) != string::npos) {
+        pos = this->fullFile.find('/', pos) + 1;
     }
-    fileName = string(fullFile, pos, len);
-    filePath = string(fullFile, 0, fullFile.size() - fileName.size());
+    this->fileName = string(fullFile, pos, len);
+    this->filePath = string(fullFile, 0, fullFile.size() - fileName.size());
 }
 
 void CodeFile::OpenFile()
@@ -174,8 +174,8 @@ string CodeFile::GetDate()
 void CodeFile::WriteFileHead()
 {
     file << "/*" << endl;
-    for (pair<string, string>& p : fileHead) {
-        WriteOneFileHead(p.first, p.second);
+    for (auto& [key, value] : this->fileHead) {
+        WriteOneFileHead(key, value);
     }
     file << " */" << endl;
     file << endl;
@@ -186,33 +186,33 @@ void CodeFile::WriteIncFiles()
     for (const string& libFile : this->libFiles) {
         WriteLibFile(libFile);
     }
-    if (!libFiles.empty()) {
+    if (!this->libFiles.empty()) {
         file << endl;
     }
-    for(const string& userFile : userFiles) {
+    for(const string& userFile : this->userFiles) {
         WriteUserFile(userFile);
     }
-    if (!userFiles.empty()) {
+    if (!this->userFiles.empty()) {
         file << endl;
     }
 }
 
 void CodeFile::WriteNamespaces()
 {
-    for(const string& space : nameSpaces) {
+    for(const string& space : this->nameSpaces) {
         WriteOneNameSpace(space);
     }
-    if (!nameSpaces.empty()) {
+    if (!this->nameSpaces.empty()) {
         file << endl;
     }
 }
 
 void CodeFile::WriteLines()
 {
-    for (const string& line : lines) {
+    for (const string& line : this->lines) {
         file << line << ";" << endl;
     }
-    if (!lines.empty()) {
+    if (!this->lines.empty()) {
         file << endl;
     }
 }

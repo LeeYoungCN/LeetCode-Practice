@@ -12,7 +12,7 @@ target_sources(${TARGET_NAME} PRIVATE ${CODE_SRCS})
 #add_subdirectory((${PUBLIC_FUNC_PATH}))
 #add_subdirectory(public_function)
 
-if(${SYSTEM} STREQUAL Windows)
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows*")
     target_link_libraries(${TARGET_NAME} ${GTEST_LIB}/libgtest.a ${GTEST_LIB}/libgmock.a)
 else()
     target_link_libraries(${TARGET_NAME} ${GTEST_LIB}/libgtestd.a ${GTEST_LIB}/libgmockd.a)
