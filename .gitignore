@@ -1,10 +1,12 @@
 
 build/*
-Tools/build/*
 bin/*
-Tools/bin/*
 cmake-build-debug/*
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 script/public_config.sh
 cmake/*
+
+Tools/bin/*
+Tools/build/*
+Tools/lib/*
