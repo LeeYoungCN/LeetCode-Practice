@@ -10,3 +10,5 @@ cmake/*
 Tools/bin/*
 Tools/build/*
 Tools/lib/*
+
+lib/google_test/lib/*
