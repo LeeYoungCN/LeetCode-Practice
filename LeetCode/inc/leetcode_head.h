@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-10-11 21:24:28
+ * Created      : 2021-11-13 17:07:54
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -57,6 +57,7 @@
 #include "lc0297_serialize_and_deserialize_binary_tree.h"
 #include "lc0300_longest_increasing_subsequence.h"
 #include "lc0368_largest_divisible_subset.h"
+#include "lc0375_guess_number_higher_or_lower_ii.h"
 #include "lc0405_convert_a_number_to_hexadecimal.h"
 #include "lc0406_queue_reconstruction_by_height.h"
 #include "lc0413_arithmetic_slices.h"
@@ -72,6 +73,7 @@
 #include "lc0502_ipo.h"
 #include "lc0516_longest_palindromic_subsequence.h"
 #include "lc0517_super_washing_machines.h"
+#include "lc0520_detect_capital.h"
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0583_delete_operation_for_two_strings.h"
