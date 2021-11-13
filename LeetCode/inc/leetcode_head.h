@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-11-13 17:07:54
+ * Created      : 2021-11-13 22:00:11
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -19,6 +19,7 @@
 #include "lc0015_3_sum.h"
 #include "lc0033_search_in_rotated_sorted_array.h"
 #include "lc0036_valid_sudoku.h"
+#include "lc0038_count_and_say.h"
 #include "lc0042_trapping_rain_water.h"
 #include "lc0044_wildcard_matching.h"
 #include "lc0045_jump_game_ii.h"
@@ -55,6 +56,7 @@
 #include "lc0284_peeking_iterator.h"
 #include "lc0295_find_median_from_data_stream.h"
 #include "lc0297_serialize_and_deserialize_binary_tree.h"
+#include "lc0299_bulls_and_cows.h"
 #include "lc0300_longest_increasing_subsequence.h"
 #include "lc0368_largest_divisible_subset.h"
 #include "lc0375_guess_number_higher_or_lower_ii.h"
@@ -100,6 +102,7 @@
 #include "lc0994_rotting_oranges.h"
 #include "lc1109_corporate_light_bookings.h"
 #include "lc1143_longest_common_subsequence.h"
+#include "lc1218_longest_arithmetic_subsequence_of_given_difference.h"
 #include "lc1305_all_elements_in_two_binary_search_trees.h"
 #include "lc1353_maximum_number_of_events_that_can_be_attended.h"
 #include "lc1418_display_table_of_food_orders_in_a_restaurant.h"
