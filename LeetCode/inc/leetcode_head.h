@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-11-13 22:00:11
+ * Created      : 2021-11-14 00:12:53
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -41,6 +41,7 @@
 #include "lc0165_compare_version_numbers.h"
 #include "lc0168_excel_sheet_column_title.h"
 #include "lc0179_largest_number.h"
+#include "lc0187_repeated_dna_sequences.h"
 #include "lc0198_house_robber.h"
 #include "lc0200_number_of_islands.h"
 #include "lc0208_implement_trie_prefix_tree.h"
@@ -71,6 +72,7 @@
 #include "lc0446_arithmetic_slices_ii_subsequence.h"
 #include "lc0447_number_of_boomerangs.h"
 #include "lc0451_sort_characters_by_frequency.h"
+#include "lc0453_minimum_moves_to_equal_array_elements.h"
 #include "lc0457_circular_array_loop.h"
 #include "lc0502_ipo.h"
 #include "lc0516_longest_palindromic_subsequence.h"
@@ -79,6 +81,7 @@
 #include "lc0523_continuous_subarray_sum.h"
 #include "lc0525_contiguous_array.h"
 #include "lc0583_delete_operation_for_two_strings.h"
+#include "lc0598_range_addition_ii.h"
 #include "lc0600_non_negative_integers_without_consecutive_ones.h"
 #include "lc0621_task_scheduler.h"
 #include "lc0637_number_of_longest_increasing_subsequence.h"
