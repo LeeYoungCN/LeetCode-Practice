@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2021-11-14 00:12:53
+ * Created      : 2021-11-14 00:23:54
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -88,6 +88,7 @@
 #include "lc0639_decode_ways_ii.h"
 #include "lc0645_set_mismatch.h"
 #include "lc0650_2_keys_keyboard.h"
+#include "lc0677_map_sum_pairs.h"
 #include "lc0678_valid_parenthesis_string.h"
 #include "lc0704_binary_search.h"
 #include "lc0725_split_linked_list_in_parts.h"
