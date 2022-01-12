@@ -2,7 +2,7 @@
  * LeetCode算法练习
  * Description  : LeetCode汇总头文件
  * Author       : 李阳
- * Created      : 2022-01-11 00:16:14
+ * Created      : 2022-01-13 01:11:24
  */
 
 #ifndef LEETCODE_HEAD_H
@@ -60,6 +60,7 @@
 #include "lc0299_bulls_and_cows.h"
 #include "lc0300_longest_increasing_subsequence.h"
 #include "lc0306_additive_number.h"
+#include "lc0306_increasing_triplet_subsequence.h"
 #include "lc0368_largest_divisible_subset.h"
 #include "lc0375_guess_number_higher_or_lower_ii.h"
 #include "lc0390_elimination_game.h"
