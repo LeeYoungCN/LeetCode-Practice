@@ -186,6 +186,12 @@ function get_platform()
     return 0
 }
 
+if [ $# -gt 0 ]; then
+    if [ -d $1 ]; then
+        pushd $1
+    fi
+fi
+
 get_platform
 if [ $? -ne 0 ]; then
     return 1
@@ -200,6 +206,6 @@ fi
 
 copy_all_file ${template_path}
 
-cd ${platform_path}/build
+cd ${platform_path}/script
 ./init_env.sh
 cd ${root}

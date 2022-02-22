@@ -4,7 +4,9 @@ cd ..
 root_path=$(pwd)
 
 if [ ! -e Platform ];then
-    ./download_Platform.sh
+    pushd ./script
+    ./download_Platform.sh ${root_path}
+    popd
     if [ $? -ne 0 ]; then
         exit
     fi

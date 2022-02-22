@@ -14,7 +14,7 @@
 int ReadInt(void);
 std::string ReadLine(void);
 void PrintBool(bool input);
-void WriteBoolVector(const std::vector<bool>& array, std::string delemiter = ", ");
+void PrintBoolVector(const std::vector<bool>& array, std::string delemiter = ", ");
 
 template<typename T>
 std::vector<T> ReadVector(const int size)
@@ -27,7 +27,7 @@ std::vector<T> ReadVector(const int size)
 }
 
 template<typename T>
-void WriteVector(const std::vector<T> array, const std::string delemiter = ", ")
+void PrintVector(const std::vector<T> array, const std::string delemiter = ", ")
 {
     auto it = array.begin();
     if (it == array.end()) {
@@ -42,7 +42,7 @@ void WriteVector(const std::vector<T> array, const std::string delemiter = ", ")
 }
 
 template<typename T>
-void WriteMatrix(const std::vector<std::vector<T>> matrix, const std::string delemiter = ", ")
+void PrintMatrix(const std::vector<std::vector<T>> matrix, const std::string delemiter = ", ")
 {
     auto array = matrix.begin();
     if (array == matrix.end()) {
@@ -50,10 +50,10 @@ void WriteMatrix(const std::vector<std::vector<T>> matrix, const std::string del
         return;
     }
     std::cout << '[';
-    WriteVector<T>(*(array++), delemiter);
+    PrintVector<T>(*(array++), delemiter);
     while(array != matrix.end()) {
         std::cout << delemiter << std::endl << " ";
-        WriteVector<T>(*(array++), delemiter);
+        PrintVector<T>(*(array++), delemiter);
     }
     std::cout << ']' << std::endl;
 }

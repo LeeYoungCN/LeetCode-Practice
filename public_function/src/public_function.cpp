@@ -26,7 +26,7 @@ string ReadLine()
     return line;
 }
 
-void WriteBoolVector(const vector<bool>& array, const string delemiter)
+void PrintBoolVector(const vector<bool>& array, const string delemiter)
 {
     vector<bool>::const_iterator it = array.begin();
     if (it == array.end()) {
