@@ -1,14 +1,15 @@
-
-build/*
+output/*
+buildcache/*
 bin/*
-cmake-build-debug/*
-.vscode/c_cpp_properties.json
+build/
+
+.vscode/settings.json
 .vscode/launch.json
-script/public_config.sh
+.vscode/c_cpp_properties.json
+
+Platform/*
 cmake/*
 
-Tools/bin/*
-Tools/build/*
 Tools/lib/*
-
-lib/google_test/lib/*
+Tools/build/*
+Tools/bin/*

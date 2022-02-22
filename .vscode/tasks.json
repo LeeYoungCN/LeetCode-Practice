@@ -8,7 +8,7 @@
         {
             "label": "Clean",
             "options": {
-                "cwd": "${workspaceFolder}/script/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
             "command": "./cmake_clean.sh",
             "detail": "清除CMake生成文件",
@@ -19,9 +19,9 @@
         {
             "label": "Config & Build",
             "options": {
-                "cwd": "${workspaceFolder}/script/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
-            "command": "./cmake_build.sh",
+            "command": "./cmake_cfg_build.sh",
             "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [
                 "$gcc"
@@ -29,7 +29,10 @@
         },
         {
             "label": "Build",
-            "command": "cmake --build build --target all",
+            "options": {
+                "cwd": "${workspaceFolder}/Platform/script/"
+            },
+            "command": "./cmake_build.sh",
             "detail": "根据makefile生成可执行文件和库文件",
             "problemMatcher": [
                 "$gcc"
@@ -37,12 +40,36 @@
         },
         {
             "label": "Run",
-            "dependsOn": [
-                "Build"
-            ],
-            "command": "./bin/LeetCodePractice*",
+            "options": {
+                "cwd": "${workspaceFolder}/Platform/script/"
+            },
+            "command": "./cmake_run.sh",
             "args": [],
             "detail": "运行程序",
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "label": "Init Env",
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./init_env.sh",
+            "args": [],
+            "detail": "初始化开发环境",
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "label": "Download Platform",
+            "options": {
+                "cwd": "${workspaceFolder}/"
+            },
+            "command": "./download_Platform.sh",
+            "args": [],
+            "detail": "下载依赖",
             "problemMatcher": [
                 "$gcc"
             ],

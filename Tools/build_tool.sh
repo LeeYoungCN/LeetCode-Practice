@@ -1,13 +1,13 @@
 #!/bin/bash
-source ../script/public_config.sh
-cmake_tool=${root_path}/cmake/toolchain.cmake
+source ../Platform/script/public_config.sh
+cmake_tool=${cmake_source_dir}/cmake/toolchain.cmake
 
 rm -rf ./build
 
 for path in $*; do
     if [ -d ./${path} ]; then
         cmake_command="cmake -S . -B ./build -DTARGET_PATH=$path"
-        if [ "${system}" = "Windows" ]; then
+        if [ "${os}" = "Windows" ]; then
             ${cmake_command} -G "MinGW Makefiles"
         else
             ${cmake_command}
