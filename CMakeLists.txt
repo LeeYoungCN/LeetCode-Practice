@@ -4,7 +4,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/toolchain.cmake)
 set(TARGET_NAME LeetCodePractice)
 
 set(CODE_PATH               ${CMAKE_SOURCE_DIR}/Main)
-set(BUILDCACHE_PATH         ${CMAKE_SOURCE_DIR}/buildcache)
+set(BUILDCACHE_PATH         ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH  ${CMAKE_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH     ${CMAKE_SOURCE_DIR}/lib)
 

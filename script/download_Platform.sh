@@ -189,7 +189,11 @@ function get_platform()
 if [ $# -gt 0 ]; then
     if [ -d $1 ]; then
         pushd $1
+    else
+        cd ..
     fi
+else
+    cd ..
 fi
 
 get_platform

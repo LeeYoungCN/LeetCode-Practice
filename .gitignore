@@ -1,7 +1,8 @@
 output/*
 buildcache/*
 bin/*
-build/
+build/*
+app/*
 
 .vscode/settings.json
 .vscode/launch.json
