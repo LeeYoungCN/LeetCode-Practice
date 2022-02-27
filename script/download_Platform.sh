@@ -198,8 +198,9 @@ fi
 
 get_platform
 if [ $? -ne 0 ]; then
-    return 1
+    exit
 fi
+
 root=$(pwd)
 platform_path=$(cd Platform;pwd)
 template_path="${platform_path}/template"
@@ -210,6 +211,10 @@ fi
 
 copy_all_file ${template_path}
 
-cd ${platform_path}/script
+if [ -e ${root}/script/init_env.sh ]; then
+    pushd ${root}/script
+else
+    pushd ${platform_path}/script
+fi
+
 ./init_env.sh
-cd ${root}

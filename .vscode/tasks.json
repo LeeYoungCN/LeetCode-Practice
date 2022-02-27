@@ -65,7 +65,7 @@
         {
             "label": "Download Platform",
             "options": {
-                "cwd": "${workspaceFolder}/"
+                "cwd": "${workspaceFolder}/script/"
             },
             "command": "./download_Platform.sh",
             "args": [],
